@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+public final class TrackingHandler {
+    
+    public static let shared = TrackingHandler()
+}
