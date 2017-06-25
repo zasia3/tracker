@@ -27,6 +27,10 @@ public final class JourneyHandler {
         return startDate == nil ? false : true
     }
     
+    public func getJourneys() -> [Journey] {
+        return journeys
+    }
+    
     public func startJourney() {
         /* set the current date as a start date */
         startDate = Date()

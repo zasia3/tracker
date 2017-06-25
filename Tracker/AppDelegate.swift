@@ -19,6 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         TrackingHandler.shared.initialize() //we need to show alert asking for location tracking permissions
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.white
+        
+        let rootViewController = RootViewController(nibName: nil, bundle: nil)
+        window?.rootViewController = rootViewController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

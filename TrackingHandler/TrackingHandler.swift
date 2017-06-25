@@ -37,6 +37,10 @@ public final class TrackingHandler: NSObject {
         locationManager.delegate = self
     }
     
+    public func journeys() -> [Journey] {
+        return journeyHandler.getJourneys()
+    }
+    
     /* method which invokes getting user position */
     public func getUserLocation() {
         

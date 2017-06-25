@@ -36,6 +36,14 @@
 		529FDD9B1EFFDF17000E550A /* JourneyHandler.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529FDD931EFFDF17000E550A /* JourneyHandler.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		529FDDA01EFFDF26000E550A /* JourneyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDD9F1EFFDF26000E550A /* JourneyHandler.swift */; };
 		529FDDA21EFFFA58000E550A /* JourneyStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDA11EFFFA58000E550A /* JourneyStatus.swift */; };
+		529FDDA61F001471000E550A /* JourneysListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDA51F001471000E550A /* JourneysListViewController.swift */; };
+		529FDDA81F001693000E550A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDA71F001693000E550A /* RootViewController.swift */; };
+		529FDDAA1F0017C5000E550A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDA91F0017C5000E550A /* NavigationController.swift */; };
+		529FDDAC1F0018FE000E550A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDAB1F0018FE000E550A /* ViewControllerFactory.swift */; };
+		529FDDB01F001E78000E550A /* JourneysDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDAF1F001E78000E550A /* JourneysDataSource.swift */; };
+		529FDDB11F001FF2000E550A /* JourneyHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529FDD931EFFDF17000E550A /* JourneyHandler.framework */; };
+		529FDDB31F002420000E550A /* JourneyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDB21F002420000E550A /* JourneyDetailsViewController.swift */; };
+		529FDDB51F00277B000E550A /* JourneyDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDB41F00277B000E550A /* JourneyDateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +125,13 @@
 		529FDD961EFFDF17000E550A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		529FDD9F1EFFDF26000E550A /* JourneyHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyHandler.swift; sourceTree = "<group>"; };
 		529FDDA11EFFFA58000E550A /* JourneyStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyStatus.swift; sourceTree = "<group>"; };
+		529FDDA51F001471000E550A /* JourneysListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneysListViewController.swift; sourceTree = "<group>"; };
+		529FDDA71F001693000E550A /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		529FDDA91F0017C5000E550A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		529FDDAB1F0018FE000E550A /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		529FDDAF1F001E78000E550A /* JourneysDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneysDataSource.swift; sourceTree = "<group>"; };
+		529FDDB21F002420000E550A /* JourneyDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyDetailsViewController.swift; sourceTree = "<group>"; };
+		529FDDB41F00277B000E550A /* JourneyDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyDateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,11 +139,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				529FDD9A1EFFDF17000E550A /* JourneyHandler.framework in Frameworks */,
 				529D50541EFFB610001E3062 /* Model.framework in Frameworks */,
+				529FDD9A1EFFDF17000E550A /* JourneyHandler.framework in Frameworks */,
+				529D503E1EFFAED7001E3062 /* TrackingHandler.framework in Frameworks */,
 				529D506B1EFFBE7D001E3062 /* iOSKit.framework in Frameworks */,
 				529D507A1EFFC7F3001E3062 /* MapKit.framework in Frameworks */,
-				529D503E1EFFAED7001E3062 /* TrackingHandler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529FDDB11F001FF2000E550A /* JourneyHandler.framework in Frameworks */,
 				529D505B1EFFB6C2001E3062 /* Model.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,12 +209,12 @@
 			isa = PBXGroup;
 			children = (
 				529D50201EFDB830001E3062 /* AppDelegate.swift */,
-				529D50221EFDB830001E3062 /* TrackingMapViewController.swift */,
+				529FDDA41F00145E000E550A /* Views */,
+				529FDDA31F001450000E550A /* Controllers */,
 				529D50241EFDB830001E3062 /* Main.storyboard */,
 				529D50271EFDB830001E3062 /* Assets.xcassets */,
 				529D50291EFDB830001E3062 /* LaunchScreen.storyboard */,
 				529D502C1EFDB830001E3062 /* Info.plist */,
-				529D50741EFFC1AB001E3062 /* MapView.swift */,
 			);
 			path = Tracker;
 			sourceTree = "<group>";
@@ -242,6 +258,7 @@
 				529D50671EFFBE7D001E3062 /* Info.plist */,
 				529D50721EFFC12C001E3062 /* View.swift */,
 				529D50781EFFC5BA001E3062 /* Extensions */,
+				529FDDB41F00277B000E550A /* JourneyDateFormatter.swift */,
 			);
 			path = iOSKit;
 			sourceTree = "<group>";
@@ -262,6 +279,44 @@
 				529FDD9F1EFFDF26000E550A /* JourneyHandler.swift */,
 			);
 			path = JourneyHandler;
+			sourceTree = "<group>";
+		};
+		529FDDA31F001450000E550A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				529FDDAD1F001E57000E550A /* ConmmonControllers */,
+				529D50221EFDB830001E3062 /* TrackingMapViewController.swift */,
+				529FDDAE1F001E65000E550A /* Journeys */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		529FDDA41F00145E000E550A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				529D50741EFFC1AB001E3062 /* MapView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		529FDDAD1F001E57000E550A /* ConmmonControllers */ = {
+			isa = PBXGroup;
+			children = (
+				529FDDA71F001693000E550A /* RootViewController.swift */,
+				529FDDA91F0017C5000E550A /* NavigationController.swift */,
+				529FDDAB1F0018FE000E550A /* ViewControllerFactory.swift */,
+			);
+			name = ConmmonControllers;
+			sourceTree = "<group>";
+		};
+		529FDDAE1F001E65000E550A /* Journeys */ = {
+			isa = PBXGroup;
+			children = (
+				529FDDA51F001471000E550A /* JourneysListViewController.swift */,
+				529FDDAF1F001E78000E550A /* JourneysDataSource.swift */,
+				529FDDB21F002420000E550A /* JourneyDetailsViewController.swift */,
+			);
+			name = Journeys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,8 +567,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529FDDB31F002420000E550A /* JourneyDetailsViewController.swift in Sources */,
+				529FDDA81F001693000E550A /* RootViewController.swift in Sources */,
+				529FDDAC1F0018FE000E550A /* ViewControllerFactory.swift in Sources */,
+				529FDDAA1F0017C5000E550A /* NavigationController.swift in Sources */,
 				529D50231EFDB830001E3062 /* TrackingMapViewController.swift in Sources */,
 				529D50751EFFC1AB001E3062 /* MapView.swift in Sources */,
+				529FDDB01F001E78000E550A /* JourneysDataSource.swift in Sources */,
+				529FDDA61F001471000E550A /* JourneysListViewController.swift in Sources */,
 				529D50211EFDB830001E3062 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				529D50731EFFC12C001E3062 /* View.swift in Sources */,
+				529FDDB51F00277B000E550A /* JourneyDateFormatter.swift in Sources */,
 				529D50771EFFC57E001E3062 /* UIView+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@
         <!--Tracking Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TrackingMapViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrackingMapViewController" id="BYZ-38-t0r" customClass="TrackingMapViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -70,6 +70,101 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Journeys List View Controller-->
+        <scene sceneID="q9Q-2E-FUD">
+            <objects>
+                <tableViewController storyboardIdentifier="JourneysListViewController" id="6OY-ZN-aVU" customClass="JourneysListViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ov8-11-aVF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="journeyCell" textLabel="zuw-6b-IkG" style="IBUITableViewCellStyleDefault" id="Mbc-bb-nvM">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mbc-bb-nvM" id="D17-gm-KbO">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zuw-6b-IkG">
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6OY-ZN-aVU" id="kuu-sK-aVY"/>
+                            <outlet property="delegate" destination="6OY-ZN-aVU" id="apD-Fv-X4y"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FHx-5a-Msz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="839" y="57"/>
+        </scene>
+        <!--Journey Details View Controller-->
+        <scene sceneID="ck9-Ha-CB4">
+            <objects>
+                <viewController storyboardIdentifier="JourneyDetailsViewController" id="BsH-fv-w1M" customClass="JourneyDetailsViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y4D-ph-KiT"/>
+                        <viewControllerLayoutGuide type="bottom" id="d44-3r-XAW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cLm-oR-hDa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KrO-IK-OiZ">
+                                <rect key="frame" x="16" y="28" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcY-pE-PqU">
+                                <rect key="frame" x="107" y="28" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9a9-NL-8s1">
+                                <rect key="frame" x="16" y="57" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUo-Ey-dlk">
+                                <rect key="frame" x="107" y="57" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KrO-IK-OiZ" firstAttribute="top" secondItem="y4D-ph-KiT" secondAttribute="bottom" constant="8" id="6H8-pB-JS0"/>
+                            <constraint firstItem="LUo-Ey-dlk" firstAttribute="baseline" secondItem="9a9-NL-8s1" secondAttribute="baseline" id="7fc-Hn-2m7"/>
+                            <constraint firstItem="LUo-Ey-dlk" firstAttribute="leading" secondItem="ZcY-pE-PqU" secondAttribute="leading" id="T7U-Dp-0tl"/>
+                            <constraint firstItem="ZcY-pE-PqU" firstAttribute="leading" secondItem="KrO-IK-OiZ" secondAttribute="trailing" constant="10" id="bu9-cq-Pfa"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="KrO-IK-OiZ" secondAttribute="leading" id="d9l-0k-prE"/>
+                            <constraint firstItem="9a9-NL-8s1" firstAttribute="top" secondItem="KrO-IK-OiZ" secondAttribute="bottom" constant="8" id="nkt-Xt-XB6"/>
+                            <constraint firstItem="9a9-NL-8s1" firstAttribute="leading" secondItem="KrO-IK-OiZ" secondAttribute="leading" id="oyH-qA-1Ik"/>
+                            <constraint firstItem="ZcY-pE-PqU" firstAttribute="baseline" secondItem="KrO-IK-OiZ" secondAttribute="baseline" id="tsu-xv-Of8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="endDate" destination="LUo-Ey-dlk" id="e50-fq-JtL"/>
+                        <outlet property="startDate" destination="ZcY-pE-PqU" id="nuw-Wn-qee"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="deY-5j-UnZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1646" y="57"/>
         </scene>
     </scenes>
 </document>
