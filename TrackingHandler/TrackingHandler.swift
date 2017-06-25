@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import Model
+import JourneyHandler
 
 public protocol TrackingHandlerDelegate: class {
     func didReceiveUserPosition(_ position: Position)
@@ -23,6 +24,10 @@ public final class TrackingHandler: NSObject {
     /* manager responsible for collecting user current position */
     private let locationManager = CLLocationManager()
     
+    /* this is a handler for tracks/journeys, for getting and storing them */
+    let journeyHandler = JourneyHandler()
+    
+    var isTrackingUser = false
     
     /* we need to ask for user permission for location tracking */
     public func initialize() {
@@ -32,8 +37,9 @@ public final class TrackingHandler: NSObject {
     
     /* method which invokes getting user position */
     public func getUserLocation() {
-        let authorizationStatus = CLLocationManager.authorizationStatus() //we must check if user accepted location tracking
         
+        //we must check if the user accepted location tracking
+        let authorizationStatus = CLLocationManager.authorizationStatus()
         
         if authorizationStatus != CLAuthorizationStatus.restricted &&
             authorizationStatus != CLAuthorizationStatus.denied {
@@ -41,5 +47,21 @@ public final class TrackingHandler: NSObject {
             /* if user accepted - we can track him */
             locationManager.startUpdatingLocation()
         }
+    }
+    
+    
+    public func startTracking() {
+        isTrackingUser = true
+        journeyHandler.startTrack()
+        locationManager.startUpdatingLocation()
+    }
+    
+    public func stopTracking() {
+        isTrackingUser = false
+        locationManager.stopUpdatingLocation()
+    }
+    
+    public func currentTrack() -> [Position] {
+        return journeyHandler.currentTrack()
     }
 }
