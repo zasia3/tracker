@@ -19,5 +19,10 @@ extension TrackingHandler: CLLocationManagerDelegate {
         
         let position = Position(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         delegate?.didReceiveUserPosition(position)
+        
+        /* if we are currently tracking the user, we must add the position to the current track */
+        if isTrackingUser {
+            journeyHandler.updateTrack(with: position)
+        }
     }
 }

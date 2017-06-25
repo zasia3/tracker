@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>JourneyHandler.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Model.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -43,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>529D50631EFFBE7D001E3062</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>529FDD921EFFDF17000E550A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

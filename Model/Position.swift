@@ -13,7 +13,7 @@ import Foundation
 
 public struct Position {
     
-    public let timestamp = Date()
+    public let date = Date()
     public let latitude: Double
     public let longitude: Double
     

@@ -14,8 +14,9 @@ import MapKit
 final class MapView: View {
     
     private let mapView = MKMapView()
-    private let regionRadius: CLLocationDistance = 1000
+    private let regionRadius: CLLocationDistance = 50
     private let annotation = MKPointAnnotation()
+    
     
     override public func onInit() {
         configureMapView()
@@ -25,7 +26,15 @@ final class MapView: View {
     public func showUserLocation(position: Position) {
         let mapLocation = CLLocation(latitude: position.latitude, longitude: position.longitude)
         centerMap(on: mapLocation)
-        showStartPin(on: mapLocation)
+        showUserPin(on: mapLocation)
+    }
+    
+    public func showCurrentTrack(with positions: [Position]) {
+        
+        // create polyline from provided user locations and add it to the mapview
+        let locations = positions.map { CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude) }
+        let polyline = MKPolyline(coordinates: locations, count: locations.count)
+        mapView.add(polyline)
     }
     
     private func centerMap(on location: CLLocation) {
@@ -33,13 +42,31 @@ final class MapView: View {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
-    private func showStartPin(on location: CLLocation) {
+    private func showUserPin(on location: CLLocation) {
         annotation.coordinate = location.coordinate
         mapView.addAnnotation(annotation)
     }
     
+    /* adding map as a subview and setting delegate */
     private func configureMapView() {
         addSubview(mapView)
         mapView.fillSuperview()
+        mapView.delegate = self
+    }
+}
+
+extension MapView: MKMapViewDelegate {
+    
+    /* we need to tell the map how to display the track */
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        //check if we are dealing with polyline, otherwise just return default renderer
+        guard overlay is MKPolyline else { return MKOverlayRenderer() }
+        
+        //drawing a nice line :)
+        let lineView = MKPolylineRenderer(overlay: overlay)
+        lineView.strokeColor = UIColor.blue
+        lineView.lineWidth = 1
+        return lineView
     }
 }
