@@ -66,7 +66,7 @@ extension MapView: MKMapViewDelegate {
         //drawing a nice line :)
         let lineView = MKPolylineRenderer(overlay: overlay)
         lineView.strokeColor = UIColor.blue
-        lineView.lineWidth = 1
+        lineView.lineWidth = 5
         return lineView
     }
 }
