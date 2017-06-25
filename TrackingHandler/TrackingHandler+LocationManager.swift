@@ -17,12 +17,14 @@ extension TrackingHandler: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         
+        /* inform delegate about location change */
         let position = Position(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         delegate?.didReceiveUserPosition(position)
         
-        /* if we are currently tracking the user, we must add the position to the current track */
-        if isTrackingUser {
+        /* if we are currently tracking the user, we must add the position to the current track and inform delegate */
+        if journeyStatus == .trackingOn {
             journeyHandler.updateTrack(with: position)
+            delegate?.trackChanged()
         }
     }
 }

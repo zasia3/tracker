@@ -15,10 +15,13 @@ final class TrackingMapViewController: UIViewController {
     @IBOutlet weak var toggleLabel: UILabel!
     @IBOutlet weak var trackingSwitch: UISwitch!
     @IBOutlet weak var mapView: MapView!
+    @IBOutlet weak var journeyButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupJourneyToggle()
+        setupTrackingLabel()
         setupTrackingSwitch()
         setupTracker()
     }
@@ -29,19 +32,61 @@ final class TrackingMapViewController: UIViewController {
         TrackingHandler.shared.getUserLocation()
     }
     
+    private func setupJourneyToggle() {
+        if TrackingHandler.shared.journeyStatus == .journeyOff {
+            journeyButton.setTitle("Start journey", for: .normal)
+        } else {
+            journeyButton.setTitle("Stop journey", for: .normal)
+        }
+    }
+    
     private func setupTrackingSwitch() {
-        trackingSwitch.isOn = false
-        toggleLabel.text = "Start tracking"
+        switch TrackingHandler.shared.journeyStatus {
+        case .journeyOff:
+            enableTrackingControls(false)
+            trackingSwitch.isOn = false
+        case .journeyOn:
+            enableTrackingControls(true)
+            trackingSwitch.isOn = false
+        case .trackingOn:
+            trackingSwitch.isOn = true
+        case .trackingOff:
+            trackingSwitch.isOn = false
+        }
+    }
+    
+    private func setupTrackingLabel() {
+        switch TrackingHandler.shared.journeyStatus {
+        case .journeyOff, .trackingOff, .journeyOn:
+            toggleLabel.text = "Start tracking"
+        case .trackingOn:
+            toggleLabel.text = "Stop tracking"
+        }
+    }
+    
+    private func enableTrackingControls(_ enable: Bool) {
+        trackingSwitch.isEnabled = enable
+        toggleLabel.textColor = enable ? UIColor.black : UIColor.lightGray
     }
     
     /* react on user change of the switch */
     @IBAction func didToggleTracking(_ sender: Any) {
-        if trackingSwitch.isOn {
-            toggleLabel.text = "Stop tracking"
-            TrackingHandler.shared.startTracking()
-        } else {
-            toggleLabel.text = "Start tracking"
-            TrackingHandler.shared.stopTracking()
+        TrackingHandler.shared.toggleTracking()
+        setupTrackingSwitch()
+        setupTrackingLabel()
+    }
+    
+    @IBAction func toggleJourney(_ sender: Any) {
+        TrackingHandler.shared.toggleJourney()
+        setupJourneyToggle()
+        setupTrackingSwitch()
+        setupTrackingLabel()
+        clearMap()
+    }
+    
+    fileprivate func clearMap() {
+        if TrackingHandler.shared.journeyStatus == .journeyOn {
+            mapView.removeTrack()
         }
     }
 }
@@ -52,13 +97,12 @@ extension TrackingMapViewController: TrackingHandlerDelegate {
     func didReceiveUserPosition(_ position: Position) {
         
         print(position)
-        
         mapView.showUserLocation(position: position)
-        showCurrentTrack()
     }
     
-    /* display user track on the map */
-    private func showCurrentTrack() {
+    /* if track changed - display user track on the map */
+    func trackChanged() {
+        
         let positions = TrackingHandler.shared.currentTrack()
         mapView.showCurrentTrack(with: positions)
     }

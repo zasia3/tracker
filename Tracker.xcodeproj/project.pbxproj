@@ -35,6 +35,7 @@
 		529FDD9A1EFFDF17000E550A /* JourneyHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529FDD931EFFDF17000E550A /* JourneyHandler.framework */; };
 		529FDD9B1EFFDF17000E550A /* JourneyHandler.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529FDD931EFFDF17000E550A /* JourneyHandler.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		529FDDA01EFFDF26000E550A /* JourneyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDD9F1EFFDF26000E550A /* JourneyHandler.swift */; };
+		529FDDA21EFFFA58000E550A /* JourneyStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDA11EFFFA58000E550A /* JourneyStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		529FDD951EFFDF17000E550A /* JourneyHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JourneyHandler.h; sourceTree = "<group>"; };
 		529FDD961EFFDF17000E550A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		529FDD9F1EFFDF26000E550A /* JourneyHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyHandler.swift; sourceTree = "<group>"; };
+		529FDDA11EFFFA58000E550A /* JourneyStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				529D503A1EFFAED7001E3062 /* Info.plist */,
 				529D50441EFFAEE4001E3062 /* TrackingHandler.swift */,
 				529D50461EFFB57F001E3062 /* TrackingHandler+LocationManager.swift */,
+				529FDDA11EFFFA58000E550A /* JourneyStatus.swift */,
 			);
 			path = TrackingHandler;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			files = (
 				529D50471EFFB57F001E3062 /* TrackingHandler+LocationManager.swift in Sources */,
 				529D50451EFFAEE4001E3062 /* TrackingHandler.swift in Sources */,
+				529FDDA21EFFFA58000E550A /* JourneyStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,6 +965,7 @@
 				529FDD9E1EFFDF17000E550A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

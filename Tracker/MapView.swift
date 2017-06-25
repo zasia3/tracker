@@ -16,10 +16,16 @@ final class MapView: View {
     private let mapView = MKMapView()
     private let regionRadius: CLLocationDistance = 50
     private let annotation = MKPointAnnotation()
-    
+    private var trackOverlay: MKPolyline?
     
     override public func onInit() {
         configureMapView()
+    }
+    
+    /* remove existing track from the map */
+    public func removeTrack() {
+        guard let trackOverlay = trackOverlay else { return }
+        mapView.remove(trackOverlay)
     }
     
     /* show a pin with user location on a map and center map on this location */
@@ -28,13 +34,16 @@ final class MapView: View {
         centerMap(on: mapLocation)
         showUserPin(on: mapLocation)
     }
-    
+    /* display track as a line on the map */
     public func showCurrentTrack(with positions: [Position]) {
+        guard positions.count > 0 else { return }
         
         // create polyline from provided user locations and add it to the mapview
         let locations = positions.map { CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude) }
-        let polyline = MKPolyline(coordinates: locations, count: locations.count)
-        mapView.add(polyline)
+        let overlay = MKPolyline(coordinates: locations, count: locations.count)
+        removeTrack()
+        mapView.add(overlay)
+        trackOverlay = overlay
     }
     
     private func centerMap(on location: CLLocation) {
@@ -42,6 +51,7 @@ final class MapView: View {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    /* display pin with current user position on the map */
     private func showUserPin(on location: CLLocation) {
         annotation.coordinate = location.coordinate
         mapView.addAnnotation(annotation)

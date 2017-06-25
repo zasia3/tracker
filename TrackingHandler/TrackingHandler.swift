@@ -13,11 +13,12 @@ import JourneyHandler
 
 public protocol TrackingHandlerDelegate: class {
     func didReceiveUserPosition(_ position: Position)
+    func trackChanged()
 }
 
 public final class TrackingHandler: NSObject {
     
-    public static let shared = TrackingHandler()
+    public static let shared = TrackingHandler() // this is singleton
     
     public weak var delegate: TrackingHandlerDelegate?
     
@@ -27,7 +28,8 @@ public final class TrackingHandler: NSObject {
     /* this is a handler for tracks/journeys, for getting and storing them */
     let journeyHandler = JourneyHandler()
     
-    var isTrackingUser = false
+    /* status of the journey */
+    public var journeyStatus: JourneyStatus = .journeyOff
     
     /* we need to ask for user permission for location tracking */
     public func initialize() {
@@ -49,15 +51,43 @@ public final class TrackingHandler: NSObject {
         }
     }
     
+    /* start or stop journey - depending if it has already started or not */
+    public func toggleJourney() {
+        if journeyHandler.journeyHasStarted {
+            finishJourney()
+        } else {
+            startJourney()
+        }
+    }
     
-    public func startTracking() {
-        isTrackingUser = true
-        journeyHandler.startTrack()
+    /* let the journey begin */
+    private func startJourney() {
+        journeyStatus = .journeyOn
+        journeyHandler.startJourney()
+    }
+    
+    /* finalize current journey and stop tracking */
+    private func finishJourney() {
+        journeyHandler.stopJourney()
+        stopTracking()
+        journeyStatus = .journeyOff
+    }
+    
+    public func toggleTracking() {
+        if journeyStatus == .trackingOn {
+            stopTracking()
+        } else {
+            startTracking()
+        }
+    }
+    
+    private func startTracking() {
+        journeyStatus = .trackingOn
         locationManager.startUpdatingLocation()
     }
     
-    public func stopTracking() {
-        isTrackingUser = false
+    private func stopTracking() {
+        journeyStatus = .trackingOff
         locationManager.stopUpdatingLocation()
     }
     

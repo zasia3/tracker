@@ -9,9 +9,14 @@
 import Foundation
 
 public struct Journey {
-    public let tracks: [Track]
     
-    public init(tracks: [Track]) {
-        self.tracks = tracks
+    public let startDate: Date
+    public let endDate: Date
+    public let track: [Position]
+    
+    public init(startDate: Date, endDate: Date, track: [Position]) {
+        self.startDate = startDate
+        self.endDate = endDate
+        self.track = track
     }
 }
