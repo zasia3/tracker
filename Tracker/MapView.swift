@@ -11,6 +11,7 @@ import Model
 import iOSKit
 import MapKit
 
+
 final class MapView: View {
     
     private let mapView = MKMapView()
@@ -46,12 +47,22 @@ final class MapView: View {
         trackOverlay = overlay
     }
     
+    /* shows track and zooms the map to fit the track bounding box */
+    public func showTrack(with positions: [Position]) {
+        showCurrentTrack(with: positions)
+        
+        guard let trackBounds = trackOverlay?.boundingMapRect else { return }
+        let rect = mapView.mapRectThatFits(trackBounds)
+        mapView.setVisibleMapRect(rect, animated: true)
+    }
+
+    
     private func centerMap(on location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
-    /* display pin with current user position on the map */
+    /* display pin with given position on the map */
     private func showUserPin(on location: CLLocation) {
         annotation.coordinate = location.coordinate
         mapView.addAnnotation(annotation)

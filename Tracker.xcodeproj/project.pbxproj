@@ -285,7 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				529FDDAD1F001E57000E550A /* ConmmonControllers */,
-				529D50221EFDB830001E3062 /* TrackingMapViewController.swift */,
+				529FDDB61F003C24000E550A /* Track */,
 				529FDDAE1F001E65000E550A /* Journeys */,
 			);
 			name = Controllers;
@@ -317,6 +317,14 @@
 				529FDDB21F002420000E550A /* JourneyDetailsViewController.swift */,
 			);
 			name = Journeys;
+			sourceTree = "<group>";
+		};
+		529FDDB61F003C24000E550A /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				529D50221EFDB830001E3062 /* TrackingMapViewController.swift */,
+			);
+			name = Track;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -144,21 +144,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sax-SB-QnG" customClass="MapView" customModule="Tracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="93" width="375" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KrO-IK-OiZ" firstAttribute="top" secondItem="y4D-ph-KiT" secondAttribute="bottom" constant="8" id="6H8-pB-JS0"/>
                             <constraint firstItem="LUo-Ey-dlk" firstAttribute="baseline" secondItem="9a9-NL-8s1" secondAttribute="baseline" id="7fc-Hn-2m7"/>
+                            <constraint firstItem="d44-3r-XAW" firstAttribute="top" secondItem="Sax-SB-QnG" secondAttribute="bottom" id="QbQ-yJ-R5h"/>
                             <constraint firstItem="LUo-Ey-dlk" firstAttribute="leading" secondItem="ZcY-pE-PqU" secondAttribute="leading" id="T7U-Dp-0tl"/>
+                            <constraint firstAttribute="trailing" secondItem="Sax-SB-QnG" secondAttribute="trailing" id="a5V-s6-XpK"/>
                             <constraint firstItem="ZcY-pE-PqU" firstAttribute="leading" secondItem="KrO-IK-OiZ" secondAttribute="trailing" constant="10" id="bu9-cq-Pfa"/>
                             <constraint firstAttribute="leadingMargin" secondItem="KrO-IK-OiZ" secondAttribute="leading" id="d9l-0k-prE"/>
+                            <constraint firstItem="Sax-SB-QnG" firstAttribute="top" secondItem="9a9-NL-8s1" secondAttribute="bottom" constant="15" id="ibr-ek-vT9"/>
                             <constraint firstItem="9a9-NL-8s1" firstAttribute="top" secondItem="KrO-IK-OiZ" secondAttribute="bottom" constant="8" id="nkt-Xt-XB6"/>
                             <constraint firstItem="9a9-NL-8s1" firstAttribute="leading" secondItem="KrO-IK-OiZ" secondAttribute="leading" id="oyH-qA-1Ik"/>
+                            <constraint firstItem="Sax-SB-QnG" firstAttribute="leading" secondItem="cLm-oR-hDa" secondAttribute="leading" id="qVT-J9-Tdj"/>
                             <constraint firstItem="ZcY-pE-PqU" firstAttribute="baseline" secondItem="KrO-IK-OiZ" secondAttribute="baseline" id="tsu-xv-Of8"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="endDate" destination="LUo-Ey-dlk" id="e50-fq-JtL"/>
+                        <outlet property="mapView" destination="Sax-SB-QnG" id="DfD-Rp-Lpe"/>
                         <outlet property="startDate" destination="ZcY-pE-PqU" id="nuw-Wn-qee"/>
                     </connections>
                 </viewController>
