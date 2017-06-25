@@ -31,9 +31,14 @@ public final class TrackingHandler: NSObject {
     /* status of the journey */
     public var journeyStatus: JourneyStatus = .journeyOff
     
-    /* we need to ask for user permission for location tracking */
+    /* initialize location manager, ask user for permissions to track the position
+     * and optimize location updates when the app is suspended
+     */
     public func initialize() {
         locationManager.requestAlwaysAuthorization()
+        
+        locationManager.pausesLocationUpdatesAutomatically = false
+        
         locationManager.delegate = self
     }
     
@@ -66,15 +71,23 @@ public final class TrackingHandler: NSObject {
     
     /* let the journey begin */
     private func startJourney() {
+        
         journeyStatus = .journeyOn
         journeyHandler.startJourney()
+        
+        /* turn on background tracking */
+        locationManager.allowsBackgroundLocationUpdates = true
     }
     
     /* finalize current journey and stop tracking */
     private func finishJourney() {
+        
         journeyHandler.stopJourney()
         stopTracking()
         journeyStatus = .journeyOff
+        
+        /* turn off background tracking */
+        locationManager.allowsBackgroundLocationUpdates = false
     }
     
     public func toggleTracking() {

@@ -369,10 +369,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				529D503D1EFFAED7001E3062 /* PBXTargetDependency */,
 				529D50531EFFB610001E3062 /* PBXTargetDependency */,
 				529D506A1EFFBE7D001E3062 /* PBXTargetDependency */,
 				529FDD991EFFDF17000E550A /* PBXTargetDependency */,
+				529D503D1EFFAED7001E3062 /* PBXTargetDependency */,
 			);
 			name = Tracker;
 			productName = Tracker;
