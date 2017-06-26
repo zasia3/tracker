@@ -15,9 +15,9 @@ final class JourneysDataSource: NSObject, UITableViewDataSource {
     
     private var items: [Journey]!
     
-    //load  data for the table
+    /* load  data for the table and sort them descending - the newest on top */
     func load() {
-        items = TrackingHandler.shared.journeys()
+        items = TrackingHandler.shared.journeys().sorted(by: { $0.startDate > $1.startDate })
     }
     
     func item(for index: Int) -> Journey {
