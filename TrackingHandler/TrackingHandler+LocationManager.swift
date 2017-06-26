@@ -18,7 +18,7 @@ extension TrackingHandler: CLLocationManagerDelegate {
         guard let location = locations.first else { return }
         
         /* inform delegate about location change */
-        let position = Position(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let position = Position(date: location.timestamp, latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         delegate?.didReceiveUserPosition(position)
         
         /* if we are currently tracking the user, we must add the position to the current track and inform delegate */

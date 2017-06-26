@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="StoredJourney" representedClassName=".StoredJourney" syncable="YES">
+        <attribute name="endDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="startDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="track" toMany="YES" deletionRule="Cascade" destinationEntity="StoredPosition" inverseName="journey" inverseEntity="StoredPosition" syncable="YES"/>
+    </entity>
+    <entity name="StoredPosition" representedClassName=".StoredPosition" syncable="YES">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="journey" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StoredJourney" inverseName="track" inverseEntity="StoredJourney" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="StoredJourney" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="StoredPosition" positionX="-54" positionY="-9" width="128" height="105"/>
+    </elements>
+</model>

@@ -8,6 +8,7 @@
 
 import Foundation
 import Model
+import Store
 
 public final class JourneyHandler {
     
@@ -17,9 +18,6 @@ public final class JourneyHandler {
     /* this variable is collecting user positions during current journey */
     private var positions = [Position]()
     
-    /* stores user journeys */
-    private var journeys = [Journey]()
-    
     // just for the sake of init from other modules(targets)
     public init() {}
     
@@ -28,7 +26,7 @@ public final class JourneyHandler {
     }
     
     public func getJourneys() -> [Journey] {
-        return journeys
+        return DataStorage.shared.journeys.allJourneys()
     }
     
     public func startJourney() {
@@ -41,7 +39,9 @@ public final class JourneyHandler {
         
         /* set end date to the current time and store the journey*/
         let journey = Journey(startDate: startDate, endDate: Date(), track: positions)
-        journeys.append(journey)
+        
+        /* save the journey to the store */
+        DataStorage.shared.journeys.saveJourney(from: journey)
         
         /* cleanup */
         positions.removeAll()

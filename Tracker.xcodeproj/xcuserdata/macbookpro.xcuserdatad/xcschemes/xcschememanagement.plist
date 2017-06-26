@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Store.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Tracker.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -53,6 +58,11 @@
 			<true/>
 		</dict>
 		<key>529FDD921EFFDF17000E550A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>529FDDBB1F0041A0000E550A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
