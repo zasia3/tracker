@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Mocks.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Model.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -37,6 +42,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>5226A9691F01A2990080B75D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>529D501C1EFDB830001E3062</key>
 		<dict>
 			<key>primary</key>
