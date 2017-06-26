@@ -13,11 +13,12 @@ import Foundation
 
 public struct Position {
     
-    public let date = Date()
+    public let date: Date
     public let latitude: Double
     public let longitude: Double
     
-    public init(latitude: Double, longitude: Double) {
+    public init(date: Date, latitude: Double, longitude: Double) {
+        self.date = date
         self.latitude = latitude
         self.longitude = longitude
     }
