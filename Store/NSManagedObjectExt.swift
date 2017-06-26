@@ -22,7 +22,7 @@ extension NSManagedObject {
         return object
     }
     
-    /* get the entity name. normally in coredata entity name contains also name of the module, so we need to remove it */
+    /* get the entity name. normally in coredata, entity name contains also name of the module, so we need to remove it */
     static var entityname: String {
         let classname = NSStringFromClass(self)
         let components = classname.components(separatedBy: ".")

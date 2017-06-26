@@ -21,19 +21,20 @@ public final class JourneyHandler {
     // just for the sake of init from other modules(targets)
     public init() {}
     
-    public var journeyHasStarted: Bool {
-        return startDate == nil ? false : true
-    }
+    public var journeyHasStarted = false
     
+    
+    /* get all recorded journeys */
     public func getJourneys() -> [Journey] {
         return DataStorage.shared.journeys.allJourneys()
     }
     
+    /* start a new journey */
     public func startJourney() {
-        /* set the current date as a start date */
-        startDate = Date()
+        journeyHasStarted = true
     }
     
+    /* stop current journey and save the recorded data */
     public func stopJourney() {
         guard let startDate = startDate else { return }
         
@@ -48,10 +49,17 @@ public final class JourneyHandler {
         self.startDate = nil
     }
     
+    /* save recorded user position in the current track */
     public func updateTrack(with position: Position) {
+        
+        /*if this is the first recorded position for this journey - set the start date */
+        if startDate == nil {
+            startDate = position.date
+        }
         positions.append(position)
     }
     
+    /* get the currently recorded track */
     public func currentTrack() -> [Position] {
         return positions
     }

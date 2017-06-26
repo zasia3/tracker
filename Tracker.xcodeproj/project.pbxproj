@@ -15,7 +15,6 @@
 		5295B63C1F0054D700355381 /* NSManagedObjectExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295B63B1F0054D700355381 /* NSManagedObjectExt.swift */; };
 		5295B6401F00570300355381 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295B63F1F00570300355381 /* DataStorage.swift */; };
 		5295B6421F0057D800355381 /* StorageDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295B6411F0057D800355381 /* StorageDataServiceProtocol.swift */; };
-		5295B6441F00587700355381 /* PositionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295B6431F00587700355381 /* PositionStorage.swift */; };
 		5295B6471F00590D00355381 /* JourneyStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295B6461F00590D00355381 /* JourneyStorage.swift */; };
 		5295B66A1F01881B00355381 /* StoredJourney+Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295B6691F01881B00355381 /* StoredJourney+Journey.swift */; };
 		5295B66C1F01885500355381 /* StoredPosition+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295B66B1F01885500355381 /* StoredPosition+Position.swift */; };
@@ -49,7 +48,6 @@
 		529FDDA21EFFFA58000E550A /* JourneyStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDA11EFFFA58000E550A /* JourneyStatus.swift */; };
 		529FDDA61F001471000E550A /* JourneysListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDA51F001471000E550A /* JourneysListViewController.swift */; };
 		529FDDA81F001693000E550A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDA71F001693000E550A /* RootViewController.swift */; };
-		529FDDAA1F0017C5000E550A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDA91F0017C5000E550A /* NavigationController.swift */; };
 		529FDDAC1F0018FE000E550A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDAB1F0018FE000E550A /* ViewControllerFactory.swift */; };
 		529FDDB01F001E78000E550A /* JourneysDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDAF1F001E78000E550A /* JourneysDataSource.swift */; };
 		529FDDB11F001FF2000E550A /* JourneyHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529FDD931EFFDF17000E550A /* JourneyHandler.framework */; };
@@ -126,7 +124,6 @@
 		5295B63B1F0054D700355381 /* NSManagedObjectExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExt.swift; sourceTree = "<group>"; };
 		5295B63F1F00570300355381 /* DataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		5295B6411F0057D800355381 /* StorageDataServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageDataServiceProtocol.swift; sourceTree = "<group>"; };
-		5295B6431F00587700355381 /* PositionStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionStorage.swift; sourceTree = "<group>"; };
 		5295B6461F00590D00355381 /* JourneyStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyStorage.swift; sourceTree = "<group>"; };
 		5295B6691F01881B00355381 /* StoredJourney+Journey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoredJourney+Journey.swift"; sourceTree = "<group>"; };
 		5295B66B1F01885500355381 /* StoredPosition+Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoredPosition+Position.swift"; sourceTree = "<group>"; };
@@ -161,7 +158,6 @@
 		529FDDA11EFFFA58000E550A /* JourneyStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyStatus.swift; sourceTree = "<group>"; };
 		529FDDA51F001471000E550A /* JourneysListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneysListViewController.swift; sourceTree = "<group>"; };
 		529FDDA71F001693000E550A /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		529FDDA91F0017C5000E550A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		529FDDAB1F0018FE000E550A /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		529FDDAF1F001E78000E550A /* JourneysDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneysDataSource.swift; sourceTree = "<group>"; };
 		529FDDB21F002420000E550A /* JourneyDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyDetailsViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +222,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5226A95F1F01A10C0080B75D /* other */ = {
+			isa = PBXGroup;
+			children = (
+				529FDD951EFFDF17000E550A /* JourneyHandler.h */,
+				529FDD961EFFDF17000E550A /* Info.plist */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
+		5226A9601F01A1160080B75D /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				529D50661EFFBE7D001E3062 /* iOSKit.h */,
+				529D50671EFFBE7D001E3062 /* Info.plist */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		5226A9611F01A1210080B75D /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				529D50721EFFC12C001E3062 /* View.swift */,
+			);
+			name = controls;
+			sourceTree = "<group>";
+		};
+		5226A9621F01A1340080B75D /* other */ = {
+			isa = PBXGroup;
+			children = (
+				529D504F1EFFB610001E3062 /* Model.h */,
+				529D50501EFFB610001E3062 /* Info.plist */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
+		5226A9631F01A13A0080B75D /* other */ = {
+			isa = PBXGroup;
+			children = (
+				529D50391EFFAED7001E3062 /* TrackingHandler.h */,
+				529D503A1EFFAED7001E3062 /* Info.plist */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
+		5226A9641F01A1460080B75D /* other */ = {
+			isa = PBXGroup;
+			children = (
+				529FDDBE1F0041A0000E550A /* Store.h */,
+				529FDDBF1F0041A0000E550A /* Info.plist */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
 		5295B6371F0050B000355381 /* StoredPosition */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,7 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				5295B63F1F00570300355381 /* DataStorage.swift */,
-				5295B6431F00587700355381 /* PositionStorage.swift */,
 				5295B6411F0057D800355381 /* StorageDataServiceProtocol.swift */,
 				5295B6461F00590D00355381 /* JourneyStorage.swift */,
 			);
@@ -301,8 +349,7 @@
 		529D50381EFFAED7001E3062 /* TrackingHandler */ = {
 			isa = PBXGroup;
 			children = (
-				529D50391EFFAED7001E3062 /* TrackingHandler.h */,
-				529D503A1EFFAED7001E3062 /* Info.plist */,
+				5226A9631F01A13A0080B75D /* other */,
 				529D50441EFFAEE4001E3062 /* TrackingHandler.swift */,
 				529D50461EFFB57F001E3062 /* TrackingHandler+LocationManager.swift */,
 				529FDDA11EFFFA58000E550A /* JourneyStatus.swift */,
@@ -313,8 +360,7 @@
 		529D504E1EFFB610001E3062 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				529D504F1EFFB610001E3062 /* Model.h */,
-				529D50501EFFB610001E3062 /* Info.plist */,
+				5226A9621F01A1340080B75D /* other */,
 				529D50591EFFB624001E3062 /* Position.swift */,
 				529FDD8C1EFFCD56000E550A /* Journey.swift */,
 			);
@@ -332,10 +378,9 @@
 		529D50651EFFBE7D001E3062 /* iOSKit */ = {
 			isa = PBXGroup;
 			children = (
-				529D50661EFFBE7D001E3062 /* iOSKit.h */,
-				529D50671EFFBE7D001E3062 /* Info.plist */,
-				529D50721EFFC12C001E3062 /* View.swift */,
+				5226A9601F01A1160080B75D /* Other */,
 				529D50781EFFC5BA001E3062 /* Extensions */,
+				5226A9611F01A1210080B75D /* controls */,
 				529FDDB41F00277B000E550A /* JourneyDateFormatter.swift */,
 			);
 			path = iOSKit;
@@ -352,8 +397,7 @@
 		529FDD941EFFDF17000E550A /* JourneyHandler */ = {
 			isa = PBXGroup;
 			children = (
-				529FDD951EFFDF17000E550A /* JourneyHandler.h */,
-				529FDD961EFFDF17000E550A /* Info.plist */,
+				5226A95F1F01A10C0080B75D /* other */,
 				529FDD9F1EFFDF26000E550A /* JourneyHandler.swift */,
 			);
 			path = JourneyHandler;
@@ -381,7 +425,6 @@
 			isa = PBXGroup;
 			children = (
 				529FDDA71F001693000E550A /* RootViewController.swift */,
-				529FDDA91F0017C5000E550A /* NavigationController.swift */,
 				529FDDAB1F0018FE000E550A /* ViewControllerFactory.swift */,
 			);
 			name = ConmmonControllers;
@@ -411,8 +454,7 @@
 				5295B6381F0050B900355381 /* StoredJourney */,
 				5295B6371F0050B000355381 /* StoredPosition */,
 				5295B6451F00589200355381 /* Storage */,
-				529FDDBE1F0041A0000E550A /* Store.h */,
-				529FDDBF1F0041A0000E550A /* Info.plist */,
+				5226A9641F01A1460080B75D /* other */,
 				529FDDC81F0041CF000E550A /* Journeys.xcdatamodeld */,
 				5295B6391F0050DB00355381 /* CoreDataStack.swift */,
 				5295B63B1F0054D700355381 /* NSManagedObjectExt.swift */,
@@ -712,7 +754,6 @@
 				529FDDB31F002420000E550A /* JourneyDetailsViewController.swift in Sources */,
 				529FDDA81F001693000E550A /* RootViewController.swift in Sources */,
 				529FDDAC1F0018FE000E550A /* ViewControllerFactory.swift in Sources */,
-				529FDDAA1F0017C5000E550A /* NavigationController.swift in Sources */,
 				529D50231EFDB830001E3062 /* TrackingMapViewController.swift in Sources */,
 				529D50751EFFC1AB001E3062 /* MapView.swift in Sources */,
 				529FDDB01F001E78000E550A /* JourneysDataSource.swift in Sources */,
@@ -771,7 +812,6 @@
 				5295B6401F00570300355381 /* DataStorage.swift in Sources */,
 				5295B66A1F01881B00355381 /* StoredJourney+Journey.swift in Sources */,
 				5295B63C1F0054D700355381 /* NSManagedObjectExt.swift in Sources */,
-				5295B6441F00587700355381 /* PositionStorage.swift in Sources */,
 				5295B63A1F0050DB00355381 /* CoreDataStack.swift in Sources */,
 				5295B6341F00508A00355381 /* StoredJourney+CoreDataProperties.swift in Sources */,
 				5295B6351F00508A00355381 /* StoredPosition+CoreDataClass.swift in Sources */,

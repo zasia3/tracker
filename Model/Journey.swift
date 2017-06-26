@@ -8,6 +8,8 @@
 
 import Foundation
 
+/* model for a journey */
+
 public struct Journey {
     
     public let startDate: Date

@@ -10,6 +10,8 @@ import UIKit
 import TrackingHandler
 import Model
 
+
+/* view controller for tracking user position */
 final class TrackingMapViewController: UIViewController {
 
     @IBOutlet weak var toggleLabel: UILabel!
@@ -32,6 +34,10 @@ final class TrackingMapViewController: UIViewController {
         TrackingHandler.shared.getUserLocation()
     }
     
+    /* configure the state of the journey button,
+     * based on the current tracking status 
+     * in this case - only the button title must be set
+     */
     private func setupJourneyToggle() {
         if TrackingHandler.shared.journeyStatus == .journeyOff {
             journeyButton.setTitle("Start journey", for: .normal)
@@ -40,6 +46,10 @@ final class TrackingMapViewController: UIViewController {
         }
     }
     
+    /* configure the state of the tracking switch,
+     * based on the current tracking status
+     * the config relates to the user interactions enabling, setting on/off, changing label color
+     */
     private func setupTrackingSwitch() {
         switch TrackingHandler.shared.journeyStatus {
         case .journeyOff:
@@ -55,6 +65,7 @@ final class TrackingMapViewController: UIViewController {
         }
     }
     
+    /* change text of the label next to the switch - depending on the tracking status */
     private func setupTrackingLabel() {
         switch TrackingHandler.shared.journeyStatus {
         case .journeyOff, .trackingOff, .journeyOn:
@@ -63,7 +74,9 @@ final class TrackingMapViewController: UIViewController {
             toggleLabel.text = "Stop tracking"
         }
     }
-    
+    /* enable/disable switch and change color of the label
+     * if the switch is disabled - label should be gray, otherwise - black
+     */
     private func enableTrackingControls(_ enable: Bool) {
         trackingSwitch.isEnabled = enable
         toggleLabel.textColor = enable ? UIColor.black : UIColor.lightGray
@@ -71,19 +84,28 @@ final class TrackingMapViewController: UIViewController {
     
     /* react on user change of the switch */
     @IBAction func didToggleTracking(_ sender: Any) {
+        
+        /* depending on the current tracking status - turn on/off tracking */
         TrackingHandler.shared.toggleTracking()
+        
+        /* and update UI */
         setupTrackingSwitch()
         setupTrackingLabel()
     }
-    
+    /* react on user tap on the journey button */
     @IBAction func toggleJourney(_ sender: Any) {
+        
+        /* depending on the current tracking status - turn on/off journey */
         TrackingHandler.shared.toggleJourney()
+        
+        /* and update UI */
         setupJourneyToggle()
         setupTrackingSwitch()
         setupTrackingLabel()
         clearMap()
     }
     
+    /* remove track from the map - we need a clear map for a new journey */
     fileprivate func clearMap() {
         if TrackingHandler.shared.journeyStatus == .journeyOn {
             mapView.removeTrack()
@@ -100,7 +122,7 @@ extension TrackingMapViewController: TrackingHandlerDelegate {
         mapView.showUserLocation(position: position)
     }
     
-    /* if track changed - display user track on the map */
+    /* if track has changed - display it on the map */
     func trackChanged() {
         
         let positions = TrackingHandler.shared.currentTrack()

@@ -20,6 +20,7 @@ public final class TrackingHandler: NSObject {
     
     public static let shared = TrackingHandler() // this is singleton
     
+    /* delegate which will respond on the user position changes */
     public weak var delegate: TrackingHandlerDelegate?
     
     /* manager responsible for collecting user current position */
@@ -42,11 +43,12 @@ public final class TrackingHandler: NSObject {
         locationManager.delegate = self
     }
     
+    /* get all stored journeys */
     public func journeys() -> [Journey] {
         return journeyHandler.getJourneys()
     }
     
-    /* method which invokes getting user position */
+    /* invoke getting and updating user position */
     public func getUserLocation() {
         
         //we must check if the user accepted location tracking
@@ -58,6 +60,11 @@ public final class TrackingHandler: NSObject {
             /* if user accepted - we can track him */
             locationManager.startUpdatingLocation()
         }
+    }
+    
+    /* get current user track */
+    public func currentTrack() -> [Position] {
+        return journeyHandler.currentTrack()
     }
     
     /* start or stop journey - depending if it has already started or not */
@@ -90,6 +97,7 @@ public final class TrackingHandler: NSObject {
         locationManager.allowsBackgroundLocationUpdates = false
     }
     
+    /* turn on or off tracking user position during the journey */
     public func toggleTracking() {
         if journeyStatus == .trackingOn {
             stopTracking()
@@ -98,17 +106,15 @@ public final class TrackingHandler: NSObject {
         }
     }
     
+    /* start updating user location and set tracking status to on */
     private func startTracking() {
         journeyStatus = .trackingOn
         locationManager.startUpdatingLocation()
     }
     
+    /* start updating user location and set tracking status to off */
     private func stopTracking() {
         journeyStatus = .trackingOff
         locationManager.stopUpdatingLocation()
-    }
-    
-    public func currentTrack() -> [Position] {
-        return journeyHandler.currentTrack()
     }
 }

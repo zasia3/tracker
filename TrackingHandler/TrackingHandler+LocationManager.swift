@@ -12,12 +12,13 @@ import Model
 
 extension TrackingHandler: CLLocationManagerDelegate {
     
-    
-    /* this method lets us to use location from system tracking */
+    /* use the location manager delegate method to retrieve current user position and pass it where needed */
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         
-        /* inform delegate about location change */
+        /* inform delegate about location change and pass it a current user location 
+         * this is independent from saving user tracks. User may only see his position without starting a journey
+         */
         let position = Position(date: location.timestamp, latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         delegate?.didReceiveUserPosition(position)
         

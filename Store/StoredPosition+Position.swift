@@ -11,6 +11,7 @@ import Model
 
 extension StoredPosition {
     
+    /* simply convert managed object to value type */
     func toPositionData() -> Position {
         
         return Position(date: self.date as Date, latitude: self.latitude, longitude: self.longitude)

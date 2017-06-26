@@ -11,18 +11,23 @@ import Model
 import TrackingHandler
 import iOSKit
 
-final class JourneysDataSource: NSObject, UITableViewDataSource {
+final class JourneysDataSource: NSObject {
     
-    private var items: [Journey]!
+    fileprivate var items: [Journey]!
     
     /* load  data for the table and sort them descending - the newest on top */
     func load() {
         items = TrackingHandler.shared.journeys().sorted(by: { $0.startDate > $1.startDate })
     }
     
+    /* get particular item */
     func item(for index: Int) -> Journey {
         return items[index]
     }
+    
+}
+
+extension JourneysDataSource: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

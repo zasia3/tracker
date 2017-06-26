@@ -24,11 +24,13 @@ final class JourneyDetailsViewController: UIViewController {
         plotTrack()
     }
     
+    /* set the formatted date strings to the labels */
     private func setupLabels() {
         startDate.text = JourneyDateFormatter.getDateTime(journey.startDate)
         endDate.text = JourneyDateFormatter.getDateTime(journey.endDate)
     }
     
+    /* in order to show the track on the map - just send the journey track to the map view */
     private func plotTrack() {
         mapView.showTrack(with: journey.track)
     }
