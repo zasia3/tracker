@@ -9,6 +9,7 @@
 import Foundation
 import Model
 import Store
+import CoreLocation
 
 final class JourneyHandler {
     

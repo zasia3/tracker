@@ -61,6 +61,9 @@
 		529FDDC31F0041A0000E550A /* Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529FDDBC1F0041A0000E550A /* Store.framework */; };
 		529FDDC41F0041A0000E550A /* Store.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529FDDBC1F0041A0000E550A /* Store.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		529FDDCA1F0041CF000E550A /* Journeys.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 529FDDC81F0041CF000E550A /* Journeys.xcdatamodeld */; };
+		52E7D7861F02E3CC00A0C207 /* Date+offset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7851F02E3CC00A0C207 /* Date+offset.swift */; };
+		52E7D7881F02E58100A0C207 /* TimeIntervalExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7871F02E58100A0C207 /* TimeIntervalExt.swift */; };
+		52E7D78A1F02EE2C00A0C207 /* Double+rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7891F02EE2C00A0C207 /* Double+rounding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +194,9 @@
 		529FDDBE1F0041A0000E550A /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
 		529FDDBF1F0041A0000E550A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		529FDDC91F0041CF000E550A /* Journeys.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Journeys.xcdatamodel; sourceTree = "<group>"; };
+		52E7D7851F02E3CC00A0C207 /* Date+offset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+offset.swift"; sourceTree = "<group>"; };
+		52E7D7871F02E58100A0C207 /* TimeIntervalExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalExt.swift; sourceTree = "<group>"; };
+		52E7D7891F02EE2C00A0C207 /* Double+rounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+rounding.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -462,6 +468,9 @@
 			isa = PBXGroup;
 			children = (
 				529D50761EFFC57E001E3062 /* UIView+Constraints.swift */,
+				52E7D7851F02E3CC00A0C207 /* Date+offset.swift */,
+				52E7D7871F02E58100A0C207 /* TimeIntervalExt.swift */,
+				52E7D7891F02EE2C00A0C207 /* Double+rounding.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -934,6 +943,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E7D78A1F02EE2C00A0C207 /* Double+rounding.swift in Sources */,
+				52E7D7881F02E58100A0C207 /* TimeIntervalExt.swift in Sources */,
+				52E7D7861F02E3CC00A0C207 /* Date+offset.swift in Sources */,
 				529D50731EFFC12C001E3062 /* View.swift in Sources */,
 				529FDDB51F00277B000E550A /* JourneyDateFormatter.swift in Sources */,
 				529D50771EFFC57E001E3062 /* UIView+Constraints.swift in Sources */,
@@ -1439,6 +1451,7 @@
 				5226A9751F01A2990080B75D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5226A9871F02BA4A0080B75D /* Build configuration list for PBXNativeTarget "TrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -1447,6 +1460,7 @@
 				5226A9891F02BA4A0080B75D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5226A9961F02BD2E0080B75D /* Build configuration list for PBXNativeTarget "StoreTests" */ = {
 			isa = XCConfigurationList;
@@ -1455,6 +1469,7 @@
 				5226A9981F02BD2E0080B75D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		529D50181EFDB830001E3062 /* Build configuration list for PBXProject "Tracker" */ = {
 			isa = XCConfigurationList;
