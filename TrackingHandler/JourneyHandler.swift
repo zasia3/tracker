@@ -36,6 +36,8 @@ final class JourneyHandler {
     
     /* stop current journey and save the recorded data */
     func stopJourney() {
+        journeyHasStarted = false
+        
         guard let startDate = startDate,
             let endDate = endDate else { return }
         
@@ -48,6 +50,7 @@ final class JourneyHandler {
         /* cleanup */
         positions.removeAll()
         self.startDate = nil
+        self.endDate = nil
     }
     
     /* save recorded user position in the current track */
