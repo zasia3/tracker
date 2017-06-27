@@ -65,6 +65,9 @@
 		52E7D7881F02E58100A0C207 /* TimeIntervalExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7871F02E58100A0C207 /* TimeIntervalExt.swift */; };
 		52E7D78A1F02EE2C00A0C207 /* Double+rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7891F02EE2C00A0C207 /* Double+rounding.swift */; };
 		52E7D78B1F02F70C00A0C207 /* iOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529D50641EFFBE7D001E3062 /* iOSKit.framework */; };
+		52E7D78C1F02FC0900A0C207 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529D504D1EFFB610001E3062 /* Model.framework */; };
+		52E7D78D1F02FC3700A0C207 /* Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529FDDBC1F0041A0000E550A /* Store.framework */; };
+		52E7D78E1F02FC6000A0C207 /* iOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529D50641EFFBE7D001E3062 /* iOSKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E7D78E1F02FC6000A0C207 /* iOSKit.framework in Frameworks */,
 				5226A9791F01ABA90080B75D /* Model.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +245,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E7D78D1F02FC3700A0C207 /* Store.framework in Frameworks */,
 				529D505B1EFFB6C2001E3062 /* Model.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E7D78C1F02FC0900A0C207 /* Model.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
