@@ -64,6 +64,7 @@
 		52E7D7861F02E3CC00A0C207 /* Date+offset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7851F02E3CC00A0C207 /* Date+offset.swift */; };
 		52E7D7881F02E58100A0C207 /* TimeIntervalExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7871F02E58100A0C207 /* TimeIntervalExt.swift */; };
 		52E7D78A1F02EE2C00A0C207 /* Double+rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7891F02EE2C00A0C207 /* Double+rounding.swift */; };
+		52E7D78B1F02F70C00A0C207 /* iOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529D50641EFFBE7D001E3062 /* iOSKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +249,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E7D78B1F02F70C00A0C207 /* iOSKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
