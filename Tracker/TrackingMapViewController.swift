@@ -119,7 +119,7 @@ extension TrackingMapViewController: TrackingHandlerDelegate {
     func didReceiveUserPosition(_ position: Position) {
         
         print(position)
-        mapView.showUserLocation(position: position)
+        mapView.showUserLocation(with: position)
     }
     
     /* if track has changed - display it on the map */

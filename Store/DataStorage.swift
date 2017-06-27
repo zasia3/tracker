@@ -39,4 +39,10 @@ public final class DataStorage {
     func save() {
         coreDataStack.saveContext()
     }
+    
+    /* delete everything from db - currently for tests */
+    public func deleteAllData() {
+        StoredJourney.deleteAll(coreDataStack.managedObjectContext)
+        save()
+    }
 }

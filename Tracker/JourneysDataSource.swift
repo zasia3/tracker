@@ -13,16 +13,30 @@ import iOSKit
 
 final class JourneysDataSource: NSObject {
     
-    fileprivate var items: [Journey]!
+    /* journeys data - displayed in the table view */
+    fileprivate var items: [Journey]! {
+        
+        /* once the items are loaded - we need to sort them according to our needs
+         * in this case - sort descending, so the newest journey is on top
+         */
+        didSet {
+            items = items.sorted(by: { $0.startDate > $1.startDate } )
+        }
+    }
     
     /* load  data for the table and sort them descending - the newest on top */
     func load() {
-        items = TrackingHandler.shared.journeys().sorted(by: { $0.startDate > $1.startDate })
+        items = TrackingHandler.shared.journeys()
     }
     
     /* get particular item */
     func item(for index: Int) -> Journey {
         return items[index]
+    }
+    
+    /* this function allows direct inserting data items - needed for inserting mock data during tests*/
+    func setItems(_ items: [Journey]) {
+        self.items = items
     }
     
 }
@@ -42,7 +56,7 @@ extension JourneysDataSource: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "journeyCell")
         
         //just show the start date of the journey
-        cell?.textLabel?.text = JourneyDateFormatter.getDateTime(item.startDate)
+        cell?.textLabel?.text = JourneyDateFormatter.getDateString(from: item.startDate)
         
         return cell!
     }

@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Mocks.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Model.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>5</integer>
+		</dict>
+		<key>StoreTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>Tracker.xcscheme</key>
 		<dict>
@@ -37,6 +47,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>5226A9691F01A2990080B75D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5226A97F1F02BA4A0080B75D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5226A98D1F02BD2E0080B75D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>529D501C1EFDB830001E3062</key>
 		<dict>
 			<key>primary</key>

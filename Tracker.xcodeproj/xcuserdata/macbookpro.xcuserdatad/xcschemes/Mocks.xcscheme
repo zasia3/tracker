@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "529D501C1EFDB830001E3062"
-               BuildableName = "Tracker.app"
-               BlueprintName = "Tracker"
+               BlueprintIdentifier = "5226A9691F01A2990080B75D"
+               BuildableName = "Mocks.framework"
+               BlueprintName = "Mocks"
                ReferencedContainer = "container:Tracker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5226A97F1F02BA4A0080B75D"
-               BuildableName = "TrackerTests.xctest"
-               BlueprintName = "TrackerTests"
-               ReferencedContainer = "container:Tracker.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "529D501C1EFDB830001E3062"
-            BuildableName = "Tracker.app"
-            BlueprintName = "Tracker"
-            ReferencedContainer = "container:Tracker.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -61,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "529D501C1EFDB830001E3062"
-            BuildableName = "Tracker.app"
-            BlueprintName = "Tracker"
+            BlueprintIdentifier = "5226A9691F01A2990080B75D"
+            BuildableName = "Mocks.framework"
+            BlueprintName = "Mocks"
             ReferencedContainer = "container:Tracker.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "529D501C1EFDB830001E3062"
-            BuildableName = "Tracker.app"
-            BlueprintName = "Tracker"
+            BlueprintIdentifier = "5226A9691F01A2990080B75D"
+            BuildableName = "Mocks.framework"
+            BlueprintName = "Mocks"
             ReferencedContainer = "container:Tracker.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

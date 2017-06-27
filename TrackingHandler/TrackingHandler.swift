@@ -9,7 +9,6 @@
 import Foundation
 import CoreLocation
 import Model
-import JourneyHandler
 
 public protocol TrackingHandlerDelegate: class {
     func didReceiveUserPosition(_ position: Position)
