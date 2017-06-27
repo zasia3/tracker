@@ -8,6 +8,7 @@
 
 import Foundation
 
+/* this is kind of template/shortcut class for UIViews - so we don't need to repeat the inits */
 open class View: UIView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,5 +20,8 @@ open class View: UIView {
         onInit()
     }
     
+    /* this is place for any kind of initialisation
+     * we need to do in the implementation classes
+     */
     open func onInit() {}
 }

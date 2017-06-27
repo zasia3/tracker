@@ -8,10 +8,12 @@
 
 import Foundation
 import Model
+import iOSKit
+
 
 public final class JourneysMock {
     
-    
+    /* mock for testing journeys */
     public static func journeys() -> [Journey] {
         let track1Mock = track1()
         let track2Mock = track2()
@@ -24,21 +26,21 @@ public final class JourneysMock {
     
     public static func track1() -> [Position] {
         return [
-            Position(date: Date(), latitude: 50.2820702, longitude: 18.6308127),
-            Position(date: Date(timeIntervalSinceNow: 5), latitude: 50.2820702, longitude: 18.6308127),
-            Position(date: Date(timeIntervalSinceNow: 11), latitude: 50.2820335, longitude: 18.6307483),
-            Position(date: Date(timeIntervalSinceNow: 16), latitude: 50.2819241, longitude: 18.6306037),
-            Position(date: Date(timeIntervalSinceNow: 22), latitude: 50.2818346, longitude: 18.6305034)
+            Position(date: JourneyDateFormatter.getDate(from: "2017.05.17 - 06:05:10")!, latitude: 50.2820702, longitude: 18.6308127),
+            Position(date: JourneyDateFormatter.getDate(from: "2017.05.17 - 06:05:15")!, latitude: 50.2820702, longitude: 18.6308127),
+            Position(date: JourneyDateFormatter.getDate(from: "2017.05.17 - 06:05:20")!, latitude: 50.2820335, longitude: 18.6307483),
+            Position(date: JourneyDateFormatter.getDate(from: "2017.05.17 - 06:05:26")!, latitude: 50.2819241, longitude: 18.6306037),
+            Position(date: JourneyDateFormatter.getDate(from: "2017.05.17 - 06:05:32")!, latitude: 50.2818346, longitude: 18.6305034)
         ]
     }
     
     public static func track2() -> [Position] {
         return [
-            Position(date: Date(timeIntervalSinceNow: 35), latitude: 50.2820702, longitude: 18.6308127),
-            Position(date: Date(timeIntervalSinceNow: 40), latitude: 50.2820702, longitude: 18.6308127),
-            Position(date: Date(timeIntervalSinceNow: 45), latitude: 50.2820335, longitude: 18.6307483),
-            Position(date: Date(timeIntervalSinceNow: 50), latitude: 50.2819241, longitude: 18.6306037),
-            Position(date: Date(timeIntervalSinceNow: 55), latitude: 50.2818346, longitude: 18.6305034)
+            Position(date: JourneyDateFormatter.getDate(from: "2017.05.18 - 06:05:10")!, latitude: 50.2820702, longitude: 18.6308127),
+            Position(date: JourneyDateFormatter.getDate(from: "2017.05.18 - 06:05:15")!, latitude: 50.2820702, longitude: 18.6308127),
+            Position(date: JourneyDateFormatter.getDate(from: "2017.05.18 - 06:05:20")!, latitude: 50.2820335, longitude: 18.6307483),
+            Position(date: JourneyDateFormatter.getDate(from: "2017.05.18 - 06:05:26")!, latitude: 50.2819241, longitude: 18.6306037),
+            Position(date: JourneyDateFormatter.getDate(from: "2017.05.18 - 06:05:32")!, latitude: 50.2818346, longitude: 18.6305034)
         ]
     }
 }

@@ -18,6 +18,7 @@ extension UIView {
             fatalError("View doesn't have superview")
         }
         
+        /* and set the constraints */
         translatesAutoresizingMaskIntoConstraints = false
         
         topAnchor.constraint(equalTo: superView.topAnchor).isActive = true
@@ -26,3 +27,4 @@ extension UIView {
         rightAnchor.constraint(equalTo: superView.rightAnchor).isActive = true
     }
 }
+

@@ -29,4 +29,19 @@ extension NSManagedObject {
         
         return components.last ?? classname
     }
+    
+    /* delete all instances of this entity in db - currently for tests */
+    static func deleteAll(_ context:NSManagedObjectContext) {
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityname)
+            var objects: [NSManagedObject]
+            try objects = context.fetch(fetchRequest) as! [NSManagedObject]
+            for object in objects {
+                context.delete(object)
+            }
+        } catch {
+            let nserror = error as NSError
+            fatalError(nserror.localizedDescription)
+        }
+    }
 }

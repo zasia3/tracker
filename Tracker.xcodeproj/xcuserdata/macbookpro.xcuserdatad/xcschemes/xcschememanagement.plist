@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>StoreTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Tracker.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -43,6 +48,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>5226A9691F01A2990080B75D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5226A97F1F02BA4A0080B75D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5226A98D1F02BD2E0080B75D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
