@@ -55,10 +55,8 @@ final class TrackingMapViewController: UIViewController {
         case .journeyOff:
             enableTrackingControls(false)
             trackingSwitch.isOn = false
-        case .journeyOn:
-            enableTrackingControls(true)
-            trackingSwitch.isOn = false
         case .trackingOn:
+            enableTrackingControls(true)
             trackingSwitch.isOn = true
         case .trackingOff:
             trackingSwitch.isOn = false
@@ -68,7 +66,7 @@ final class TrackingMapViewController: UIViewController {
     /* change text of the label next to the switch - depending on the tracking status */
     private func setupTrackingLabel() {
         switch TrackingHandler.shared.journeyStatus {
-        case .journeyOff, .trackingOff, .journeyOn:
+        case .journeyOff, .trackingOff:
             toggleLabel.text = "Start tracking"
         case .trackingOn:
             toggleLabel.text = "Stop tracking"
@@ -107,7 +105,7 @@ final class TrackingMapViewController: UIViewController {
     
     /* remove track from the map - we need a clear map for a new journey */
     fileprivate func clearMap() {
-        if TrackingHandler.shared.journeyStatus == .journeyOn {
+        if TrackingHandler.shared.journeyStatus == .trackingOff {
             mapView.removeTrack()
         }
     }

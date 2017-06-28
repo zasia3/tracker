@@ -21,7 +21,13 @@ public struct Journey {
     public init(startDate: Date, endDate: Date, track: [Position]) {
         self.startDate = startDate
         self.endDate = endDate
-        self.track = track
+        
+        /* the track must be sorted, because the coming positions can be unordered,
+         * especially when coming from core data
+         */
+        self.track = track.sorted(by: { firstPosition, secondPosition in
+            firstPosition.date > secondPosition.date
+        })
     }
 }
 

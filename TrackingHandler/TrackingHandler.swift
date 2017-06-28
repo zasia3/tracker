@@ -78,9 +78,9 @@ public final class TrackingHandler: NSObject {
     /* let the journey begin */
     private func startJourney() {
         
-        journeyStatus = .journeyOn
+//        journeyStatus = .journeyOn
         journeyHandler.startJourney()
-        
+        startTracking()
         /* turn on background tracking */
         locationManager.allowsBackgroundLocationUpdates = true
     }

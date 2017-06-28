@@ -68,6 +68,8 @@ final class JourneyHandler {
     
     /* get the currently recorded track */
     func currentTrack() -> [Position] {
-        return positions
+        return positions.sorted(by: { firstPosition, secondPosition in
+            firstPosition.date > secondPosition.date
+        })
     }
 }
