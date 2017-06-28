@@ -7,20 +7,21 @@
 //
 
 import UIKit
+import Auth
 
-final class JourneysListViewController: UITableViewController {
+final class JourneysListViewController: UITableViewController, AuthProtectedViewController {
     
     private var dataSource: JourneysDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupDataSource()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         reloadData()
+        showLogin()
     }
     
     /* initialize data source and assign it to the tableview */

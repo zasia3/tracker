@@ -4,10 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Auth.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>Keychain.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Mocks.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>5</integer>
 		</dict>
 		<key>Model.xcscheme</key>
 		<dict>
@@ -17,12 +27,12 @@
 		<key>Store.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>4</integer>
 		</dict>
 		<key>StoreTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>6</integer>
 		</dict>
 		<key>Tracker.xcscheme</key>
 		<dict>
@@ -32,12 +42,12 @@
 		<key>TrackingHandler.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<key>iOSKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -83,6 +93,16 @@
 			<true/>
 		</dict>
 		<key>529FDDBB1F0041A0000E550A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52E7D7951F041B3800A0C207</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52E7D7AA1F041B9300A0C207</key>
 		<dict>
 			<key>primary</key>
 			<true/>
