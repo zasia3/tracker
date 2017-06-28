@@ -81,6 +81,7 @@
 		52E7D7B91F04230300A0C207 /* Keychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E7D7961F041B3800A0C207 /* Keychain.framework */; };
 		52E7D7BB1F04245A00A0C207 /* AuthProtectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7BA1F04245A00A0C207 /* AuthProtectedViewController.swift */; };
 		52E7D7BD1F04259300A0C207 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7BC1F04259300A0C207 /* ProfileViewController.swift */; };
+		52E7D7C01F04375F00A0C207 /* ProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7BF1F04375F00A0C207 /* ProfileDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,6 +243,7 @@
 		52E7D7B71F041BA500A0C207 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		52E7D7BA1F04245A00A0C207 /* AuthProtectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProtectedViewController.swift; sourceTree = "<group>"; };
 		52E7D7BC1F04259300A0C207 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		52E7D7BF1F04375F00A0C207 /* ProfileDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -632,6 +634,7 @@
 			isa = PBXGroup;
 			children = (
 				52E7D7BC1F04259300A0C207 /* ProfileViewController.swift */,
+				52E7D7BF1F04375F00A0C207 /* ProfileDataSource.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -1102,6 +1105,7 @@
 				529D50751EFFC1AB001E3062 /* MapView.swift in Sources */,
 				529FDDB01F001E78000E550A /* JourneysDataSource.swift in Sources */,
 				529FDDA61F001471000E550A /* JourneysListViewController.swift in Sources */,
+				52E7D7C01F04375F00A0C207 /* ProfileDataSource.swift in Sources */,
 				529D50211EFDB830001E3062 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

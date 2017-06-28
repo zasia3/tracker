@@ -18,10 +18,6 @@ final class LoginViewController: UIViewController {
     
     private var success:Bool = false
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -37,7 +33,6 @@ final class LoginViewController: UIViewController {
 
     public func loginWithTouchId(){
         guard context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
-
             return
         }
         
@@ -46,22 +41,9 @@ final class LoginViewController: UIViewController {
                 print("Auth was OK")
                 Auth.shared.setLoggedIn()
                 self?.dismiss(animated: true, completion: nil)
-//                completion(true)
             } else {
                 print("Error received: %d", error!)
             }
         }
     }
-    
-//    private func loginWithTouchId() {
-    
-        
-//        Auth.shared.loginWithTouchId() { [weak self] success in
-//            if success {
-//                print("Auth was OK");
-//                self?.dismiss(animated: true, completion: nil)
-//                self?.success = success
-//            }
-//        }
-//    }
 }

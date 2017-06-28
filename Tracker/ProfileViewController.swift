@@ -9,12 +9,32 @@
 import UIKit
 import Auth
 
-final class ProfileViewController: UITableViewController {
+final class ProfileViewController: UITableViewController, AuthProtectedViewController {
+    
+    private var dataSource: ProfileDataSource!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataSource = ProfileDataSource()
+        tableView.dataSource = dataSource
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            Auth.shared.logout()
-            showLogoutAlert()
+        let item = dataSource.item(for: indexPath.row)
+        switch item {
+        case .login:
+            if Auth.shared.isLoggedIn() {
+                Auth.shared.logout()
+                showLogoutAlert()
+                tableView.reloadData()
+            } else {
+                showLogin()
+            }
         }
     }
     
@@ -24,5 +44,6 @@ final class ProfileViewController: UITableViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
     
 }
