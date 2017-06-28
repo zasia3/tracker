@@ -82,6 +82,8 @@
 		52E7D7BB1F04245A00A0C207 /* AuthProtectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7BA1F04245A00A0C207 /* AuthProtectedViewController.swift */; };
 		52E7D7BD1F04259300A0C207 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7BC1F04259300A0C207 /* ProfileViewController.swift */; };
 		52E7D7C01F04375F00A0C207 /* ProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7BF1F04375F00A0C207 /* ProfileDataSource.swift */; };
+		52E7D7C51F0445BC00A0C207 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7C41F0445BC00A0C207 /* RegistrationViewController.swift */; };
+		52E7D7C71F0447A600A0C207 /* String+ email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7C61F0447A600A0C207 /* String+ email.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +246,8 @@
 		52E7D7BA1F04245A00A0C207 /* AuthProtectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProtectedViewController.swift; sourceTree = "<group>"; };
 		52E7D7BC1F04259300A0C207 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52E7D7BF1F04375F00A0C207 /* ProfileDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDataSource.swift; sourceTree = "<group>"; };
+		52E7D7C41F0445BC00A0C207 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		52E7D7C61F0447A600A0C207 /* String+ email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ email.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -543,6 +547,7 @@
 				52E7D7851F02E3CC00A0C207 /* Date+offset.swift */,
 				52E7D7871F02E58100A0C207 /* TimeIntervalExt.swift */,
 				52E7D7891F02EE2C00A0C207 /* Double+rounding.swift */,
+				52E7D7C61F0447A600A0C207 /* String+ email.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -554,7 +559,7 @@
 				52E7D7BE1F04259900A0C207 /* Profile */,
 				529FDDB61F003C24000E550A /* Track */,
 				529FDDAE1F001E65000E550A /* Journeys */,
-				52E7D78F1F04137700A0C207 /* LoginViewController.swift */,
+				52E7D7C31F04447E00A0C207 /* Security */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -637,6 +642,15 @@
 				52E7D7BF1F04375F00A0C207 /* ProfileDataSource.swift */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		52E7D7C31F04447E00A0C207 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				52E7D78F1F04137700A0C207 /* LoginViewController.swift */,
+				52E7D7C41F0445BC00A0C207 /* RegistrationViewController.swift */,
+			);
+			name = Security;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1099,6 +1113,7 @@
 				52E7D7BB1F04245A00A0C207 /* AuthProtectedViewController.swift in Sources */,
 				529FDDB31F002420000E550A /* JourneyDetailsViewController.swift in Sources */,
 				529FDDA81F001693000E550A /* RootViewController.swift in Sources */,
+				52E7D7C51F0445BC00A0C207 /* RegistrationViewController.swift in Sources */,
 				529FDDAC1F0018FE000E550A /* ViewControllerFactory.swift in Sources */,
 				529D50231EFDB830001E3062 /* TrackingMapViewController.swift in Sources */,
 				52E7D7BD1F04259300A0C207 /* ProfileViewController.swift in Sources */,
@@ -1139,6 +1154,7 @@
 				52E7D7861F02E3CC00A0C207 /* Date+offset.swift in Sources */,
 				529D50731EFFC12C001E3062 /* View.swift in Sources */,
 				529FDDB51F00277B000E550A /* JourneyDateFormatter.swift in Sources */,
+				52E7D7C71F0447A600A0C207 /* String+ email.swift in Sources */,
 				529D50771EFFC57E001E3062 /* UIView+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1844,6 +1860,7 @@
 				52E7D7A11F041B3800A0C207 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52E7D7B41F041B9300A0C207 /* Build configuration list for PBXNativeTarget "Auth" */ = {
 			isa = XCConfigurationList;
@@ -1852,6 +1869,7 @@
 				52E7D7B61F041B9300A0C207 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

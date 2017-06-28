@@ -15,6 +15,7 @@ enum ControllerType: CustomStringConvertible {
     case journeys
     case journeyDetails
     case login
+    case register
     case profile
     
     var storyboardIdentifier: String {
@@ -27,6 +28,8 @@ enum ControllerType: CustomStringConvertible {
             return "JourneyDetailsViewController"
         case .login:
             return "LoginViewController"
+        case .register:
+            return "RegistrationViewController"
         case .profile:
             return "ProfileViewController"
         }
@@ -46,6 +49,8 @@ enum ControllerType: CustomStringConvertible {
             return "Journey details"
         case .login:
             return "Login"
+        case .register:
+            return "Register"
         case .profile:
             return "Profile"
         }

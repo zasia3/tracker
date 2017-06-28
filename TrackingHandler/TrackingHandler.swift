@@ -75,10 +75,24 @@ public final class TrackingHandler: NSObject {
         }
     }
     
+    
+    /* if we are not tracking yet, pause getting user location */
+    public func pauseUserUpdate() {
+        if journeyStatus == .journeyOff {
+            locationManager.stopUpdatingLocation()
+        }
+    }
+    
+    /* if we are not tracking yet, resume getting user location */
+    public func resumeUserUpdate() {
+        if journeyStatus == .journeyOff {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
     /* let the journey begin */
     private func startJourney() {
         
-//        journeyStatus = .journeyOn
         journeyHandler.startJourney()
         startTracking()
         /* turn on background tracking */

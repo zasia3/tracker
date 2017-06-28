@@ -27,6 +27,22 @@ final class TrackingMapViewController: UIViewController {
         setupTrackingSwitch()
         setupTracker()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        /* if we are not tracking and user returns from another screen - start getting his position to show on the map */
+        TrackingHandler.shared.resumeUserUpdate()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        /* if we are not tracking and user goes to another screen - stop getting his position */
+        TrackingHandler.shared.pauseUserUpdate()
+    }
+    
+    
 
     /* set the position tracker delegate and ask for user location */
     private func setupTracker() {
