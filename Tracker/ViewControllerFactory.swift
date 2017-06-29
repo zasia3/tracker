@@ -14,6 +14,10 @@ enum ControllerType: CustomStringConvertible {
     case track
     case journeys
     case journeyDetails
+    case login
+    case register
+    case profile
+    case changePassword
     
     var storyboardIdentifier: String {
         switch self {
@@ -23,6 +27,14 @@ enum ControllerType: CustomStringConvertible {
             return "JourneysListViewController"
         case .journeyDetails:
             return "JourneyDetailsViewController"
+        case .login:
+            return "LoginViewController"
+        case .register:
+            return "RegistrationViewController"
+        case .profile:
+            return "ProfileViewController"
+        case .changePassword:
+            return "ChangePasswordViewController"
         }
     }
     
@@ -38,6 +50,14 @@ enum ControllerType: CustomStringConvertible {
             return "Journeys"
         case .journeyDetails:
             return "Journey details"
+        case .login:
+            return "Login"
+        case .register:
+            return "Register"
+        case .profile:
+            return "Profile"
+        case .changePassword:
+            return "Change password"
         }
     }
     
@@ -50,6 +70,8 @@ enum ControllerType: CustomStringConvertible {
             return UIImage(named: "map_icon")
         case .journeys:
             return UIImage(named: "list_icon")
+        case .profile:
+            return UIImage(named: "profile_icon")
         default:
             return nil
         }

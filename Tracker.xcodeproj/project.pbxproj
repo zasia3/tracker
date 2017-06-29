@@ -68,6 +68,24 @@
 		52E7D78C1F02FC0900A0C207 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529D504D1EFFB610001E3062 /* Model.framework */; };
 		52E7D78D1F02FC3700A0C207 /* Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529FDDBC1F0041A0000E550A /* Store.framework */; };
 		52E7D78E1F02FC6000A0C207 /* iOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529D50641EFFBE7D001E3062 /* iOSKit.framework */; };
+		52E7D7901F04137700A0C207 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D78F1F04137700A0C207 /* LoginViewController.swift */; };
+		52E7D79A1F041B3800A0C207 /* Keychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 52E7D7981F041B3800A0C207 /* Keychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52E7D79D1F041B3800A0C207 /* Keychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E7D7961F041B3800A0C207 /* Keychain.framework */; };
+		52E7D79E1F041B3800A0C207 /* Keychain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52E7D7961F041B3800A0C207 /* Keychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52E7D7A31F041B4F00A0C207 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7A21F041B4F00A0C207 /* KeychainItemAccessibility.swift */; };
+		52E7D7A51F041B7000A0C207 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7A41F041B7000A0C207 /* KeychainWrapper.swift */; };
+		52E7D7AF1F041B9300A0C207 /* Auth.h in Headers */ = {isa = PBXBuildFile; fileRef = 52E7D7AD1F041B9300A0C207 /* Auth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52E7D7B21F041B9300A0C207 /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E7D7AB1F041B9300A0C207 /* Auth.framework */; };
+		52E7D7B31F041B9300A0C207 /* Auth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52E7D7AB1F041B9300A0C207 /* Auth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52E7D7B81F041BA500A0C207 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7B71F041BA500A0C207 /* Auth.swift */; };
+		52E7D7B91F04230300A0C207 /* Keychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E7D7961F041B3800A0C207 /* Keychain.framework */; };
+		52E7D7BD1F04259300A0C207 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7BC1F04259300A0C207 /* ProfileViewController.swift */; };
+		52E7D7C01F04375F00A0C207 /* ProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7BF1F04375F00A0C207 /* ProfileDataSource.swift */; };
+		52E7D7C51F0445BC00A0C207 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7C41F0445BC00A0C207 /* RegistrationViewController.swift */; };
+		52E7D7C71F0447A600A0C207 /* String+ email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7C61F0447A600A0C207 /* String+ email.swift */; };
+		52E7D7CB1F05837800A0C207 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7CA1F05837800A0C207 /* ChangePasswordViewController.swift */; };
+		52E7D7CF1F058D4800A0C207 /* AlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7CE1F058D4800A0C207 /* AlertProtocol.swift */; };
+		52E7D7D41F058F2200A0C207 /* AuthProtectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7D31F058F2200A0C207 /* AuthProtectedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +138,20 @@
 			remoteGlobalIDString = 529FDDBB1F0041A0000E550A;
 			remoteInfo = Store;
 		};
+		52E7D79B1F041B3800A0C207 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 529D50151EFDB830001E3062 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52E7D7951F041B3800A0C207;
+			remoteInfo = Keychain;
+		};
+		52E7D7B01F041B9300A0C207 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 529D50151EFDB830001E3062 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52E7D7AA1F041B9300A0C207;
+			remoteInfo = Auth;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -129,11 +161,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				52E7D79E1F041B3800A0C207 /* Keychain.framework in Embed Frameworks */,
 				529D50551EFFB610001E3062 /* Model.framework in Embed Frameworks */,
 				529D506C1EFFBE7D001E3062 /* iOSKit.framework in Embed Frameworks */,
 				5226A9721F01A2990080B75D /* Mocks.framework in Embed Frameworks */,
 				529FDDC41F0041A0000E550A /* Store.framework in Embed Frameworks */,
 				529D503F1EFFAED7001E3062 /* TrackingHandler.framework in Embed Frameworks */,
+				52E7D7B31F041B9300A0C207 /* Auth.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +235,23 @@
 		52E7D7851F02E3CC00A0C207 /* Date+offset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+offset.swift"; sourceTree = "<group>"; };
 		52E7D7871F02E58100A0C207 /* TimeIntervalExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalExt.swift; sourceTree = "<group>"; };
 		52E7D7891F02EE2C00A0C207 /* Double+rounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+rounding.swift"; sourceTree = "<group>"; };
+		52E7D78F1F04137700A0C207 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		52E7D7961F041B3800A0C207 /* Keychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Keychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E7D7981F041B3800A0C207 /* Keychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keychain.h; sourceTree = "<group>"; };
+		52E7D7991F041B3800A0C207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E7D7A21F041B4F00A0C207 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		52E7D7A41F041B7000A0C207 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		52E7D7AB1F041B9300A0C207 /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E7D7AD1F041B9300A0C207 /* Auth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Auth.h; sourceTree = "<group>"; };
+		52E7D7AE1F041B9300A0C207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E7D7B71F041BA500A0C207 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		52E7D7BC1F04259300A0C207 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		52E7D7BF1F04375F00A0C207 /* ProfileDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDataSource.swift; sourceTree = "<group>"; };
+		52E7D7C41F0445BC00A0C207 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		52E7D7C61F0447A600A0C207 /* String+ email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ email.swift"; sourceTree = "<group>"; };
+		52E7D7CA1F05837800A0C207 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		52E7D7CE1F058D4800A0C207 /* AlertProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertProtocol.swift; sourceTree = "<group>"; };
+		52E7D7D31F058F2200A0C207 /* AuthProtectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProtectedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,8 +284,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				529D50541EFFB610001E3062 /* Model.framework in Frameworks */,
+				52E7D79D1F041B3800A0C207 /* Keychain.framework in Frameworks */,
 				5226A9711F01A2990080B75D /* Mocks.framework in Frameworks */,
 				529FDDC31F0041A0000E550A /* Store.framework in Frameworks */,
+				52E7D7B21F041B9300A0C207 /* Auth.framework in Frameworks */,
 				529D503E1EFFAED7001E3062 /* TrackingHandler.framework in Frameworks */,
 				529D506B1EFFBE7D001E3062 /* iOSKit.framework in Frameworks */,
 				529D507A1EFFC7F3001E3062 /* MapKit.framework in Frameworks */,
@@ -270,6 +323,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E7D78C1F02FC0900A0C207 /* Model.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E7D7921F041B3800A0C207 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E7D7A71F041B9300A0C207 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E7D7B91F04230300A0C207 /* Keychain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +465,8 @@
 				529FDDBD1F0041A0000E550A /* Store */,
 				5226A96B1F01A2990080B75D /* Mocks */,
 				5226A98F1F02BD2E0080B75D /* StoreTests */,
+				52E7D7971F041B3800A0C207 /* Keychain */,
+				52E7D7AC1F041B9300A0C207 /* Auth */,
 				529D501E1EFDB830001E3062 /* Products */,
 				529D505C1EFFBA87001E3062 /* Frameworks */,
 			);
@@ -413,6 +483,8 @@
 				5226A96A1F01A2990080B75D /* Mocks.framework */,
 				5226A9801F02BA4A0080B75D /* TrackerTests.xctest */,
 				5226A98E1F02BD2E0080B75D /* StoreTests.xctest */,
+				52E7D7961F041B3800A0C207 /* Keychain.framework */,
+				52E7D7AB1F041B9300A0C207 /* Auth.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -465,6 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				5226A9601F01A1160080B75D /* Other */,
+				52E7D7D01F058D5500A0C207 /* Protocols */,
 				529D50781EFFC5BA001E3062 /* Extensions */,
 				5226A9611F01A1210080B75D /* controls */,
 				529FDDB41F00277B000E550A /* JourneyDateFormatter.swift */,
@@ -479,6 +552,7 @@
 				52E7D7851F02E3CC00A0C207 /* Date+offset.swift */,
 				52E7D7871F02E58100A0C207 /* TimeIntervalExt.swift */,
 				52E7D7891F02EE2C00A0C207 /* Double+rounding.swift */,
+				52E7D7C61F0447A600A0C207 /* String+ email.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -487,8 +561,10 @@
 			isa = PBXGroup;
 			children = (
 				529FDDAD1F001E57000E550A /* ConmmonControllers */,
+				52E7D7BE1F04259900A0C207 /* Profile */,
 				529FDDB61F003C24000E550A /* Track */,
 				529FDDAE1F001E65000E550A /* Journeys */,
+				52E7D7C31F04447E00A0C207 /* Security */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -506,6 +582,7 @@
 			children = (
 				529FDDA71F001693000E550A /* RootViewController.swift */,
 				529FDDAB1F0018FE000E550A /* ViewControllerFactory.swift */,
+				52E7D7D31F058F2200A0C207 /* AuthProtectedViewController.swift */,
 			);
 			name = ConmmonControllers;
 			sourceTree = "<group>";
@@ -540,6 +617,54 @@
 				5295B63B1F0054D700355381 /* NSManagedObjectExt.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		52E7D7971F041B3800A0C207 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				52E7D7981F041B3800A0C207 /* Keychain.h */,
+				52E7D7991F041B3800A0C207 /* Info.plist */,
+				52E7D7A21F041B4F00A0C207 /* KeychainItemAccessibility.swift */,
+				52E7D7A41F041B7000A0C207 /* KeychainWrapper.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		52E7D7AC1F041B9300A0C207 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				52E7D7AD1F041B9300A0C207 /* Auth.h */,
+				52E7D7AE1F041B9300A0C207 /* Info.plist */,
+				52E7D7B71F041BA500A0C207 /* Auth.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		52E7D7BE1F04259900A0C207 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				52E7D7BC1F04259300A0C207 /* ProfileViewController.swift */,
+				52E7D7BF1F04375F00A0C207 /* ProfileDataSource.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		52E7D7C31F04447E00A0C207 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				52E7D78F1F04137700A0C207 /* LoginViewController.swift */,
+				52E7D7C41F0445BC00A0C207 /* RegistrationViewController.swift */,
+				52E7D7CA1F05837800A0C207 /* ChangePasswordViewController.swift */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		52E7D7D01F058D5500A0C207 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				52E7D7CE1F058D4800A0C207 /* AlertProtocol.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -582,6 +707,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				529FDDC01F0041A0000E550A /* Store.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E7D7931F041B3800A0C207 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E7D79A1F041B3800A0C207 /* Keychain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E7D7A81F041B9300A0C207 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E7D7AF1F041B9300A0C207 /* Auth.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,6 +800,8 @@
 				529FDDC21F0041A0000E550A /* PBXTargetDependency */,
 				529D503D1EFFAED7001E3062 /* PBXTargetDependency */,
 				5226A9701F01A2990080B75D /* PBXTargetDependency */,
+				52E7D79C1F041B3800A0C207 /* PBXTargetDependency */,
+				52E7D7B11F041B9300A0C207 /* PBXTargetDependency */,
 			);
 			name = Tracker;
 			productName = Tracker;
@@ -737,6 +880,42 @@
 			productReference = 529FDDBC1F0041A0000E550A /* Store.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		52E7D7951F041B3800A0C207 /* Keychain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52E7D79F1F041B3800A0C207 /* Build configuration list for PBXNativeTarget "Keychain" */;
+			buildPhases = (
+				52E7D7911F041B3800A0C207 /* Sources */,
+				52E7D7921F041B3800A0C207 /* Frameworks */,
+				52E7D7931F041B3800A0C207 /* Headers */,
+				52E7D7941F041B3800A0C207 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Keychain;
+			productName = Keychain;
+			productReference = 52E7D7961F041B3800A0C207 /* Keychain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		52E7D7AA1F041B9300A0C207 /* Auth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52E7D7B41F041B9300A0C207 /* Build configuration list for PBXNativeTarget "Auth" */;
+			buildPhases = (
+				52E7D7A61F041B9300A0C207 /* Sources */,
+				52E7D7A71F041B9300A0C207 /* Frameworks */,
+				52E7D7A81F041B9300A0C207 /* Headers */,
+				52E7D7A91F041B9300A0C207 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Auth;
+			productName = Auth;
+			productReference = 52E7D7AB1F041B9300A0C207 /* Auth.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -798,6 +977,18 @@
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
+					52E7D7951F041B3800A0C207 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HH2W3RXN6V;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					52E7D7AA1F041B9300A0C207 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HH2W3RXN6V;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 529D50181EFDB830001E3062 /* Build configuration list for PBXProject "Tracker" */;
@@ -821,6 +1012,8 @@
 				5226A9691F01A2990080B75D /* Mocks */,
 				5226A97F1F02BA4A0080B75D /* TrackerTests */,
 				5226A98D1F02BD2E0080B75D /* StoreTests */,
+				52E7D7951F041B3800A0C207 /* Keychain */,
+				52E7D7AA1F041B9300A0C207 /* Auth */,
 			);
 		};
 /* End PBXProject section */
@@ -885,6 +1078,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52E7D7941F041B3800A0C207 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E7D7A91F041B9300A0C207 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -916,14 +1123,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E7D7901F04137700A0C207 /* LoginViewController.swift in Sources */,
 				529FDDB31F002420000E550A /* JourneyDetailsViewController.swift in Sources */,
 				529FDDA81F001693000E550A /* RootViewController.swift in Sources */,
+				52E7D7C51F0445BC00A0C207 /* RegistrationViewController.swift in Sources */,
 				529FDDAC1F0018FE000E550A /* ViewControllerFactory.swift in Sources */,
+				52E7D7D41F058F2200A0C207 /* AuthProtectedViewController.swift in Sources */,
 				529D50231EFDB830001E3062 /* TrackingMapViewController.swift in Sources */,
+				52E7D7BD1F04259300A0C207 /* ProfileViewController.swift in Sources */,
 				529D50751EFFC1AB001E3062 /* MapView.swift in Sources */,
 				529FDDB01F001E78000E550A /* JourneysDataSource.swift in Sources */,
 				529FDDA61F001471000E550A /* JourneysListViewController.swift in Sources */,
+				52E7D7C01F04375F00A0C207 /* ProfileDataSource.swift in Sources */,
 				529D50211EFDB830001E3062 /* AppDelegate.swift in Sources */,
+				52E7D7CB1F05837800A0C207 /* ChangePasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -951,11 +1164,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E7D7CF1F058D4800A0C207 /* AlertProtocol.swift in Sources */,
 				52E7D78A1F02EE2C00A0C207 /* Double+rounding.swift in Sources */,
 				52E7D7881F02E58100A0C207 /* TimeIntervalExt.swift in Sources */,
 				52E7D7861F02E3CC00A0C207 /* Date+offset.swift in Sources */,
 				529D50731EFFC12C001E3062 /* View.swift in Sources */,
 				529FDDB51F00277B000E550A /* JourneyDateFormatter.swift in Sources */,
+				52E7D7C71F0447A600A0C207 /* String+ email.swift in Sources */,
 				529D50771EFFC57E001E3062 /* UIView+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -976,6 +1191,23 @@
 				5295B63A1F0050DB00355381 /* CoreDataStack.swift in Sources */,
 				5295B6341F00508A00355381 /* StoredJourney+CoreDataProperties.swift in Sources */,
 				5295B6351F00508A00355381 /* StoredPosition+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E7D7911F041B3800A0C207 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E7D7A31F041B4F00A0C207 /* KeychainItemAccessibility.swift in Sources */,
+				52E7D7A51F041B7000A0C207 /* KeychainWrapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E7D7A61F041B9300A0C207 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E7D7B81F041BA500A0C207 /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1016,6 +1248,16 @@
 			isa = PBXTargetDependency;
 			target = 529FDDBB1F0041A0000E550A /* Store */;
 			targetProxy = 529FDDC11F0041A0000E550A /* PBXContainerItemProxy */;
+		};
+		52E7D79C1F041B3800A0C207 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52E7D7951F041B3800A0C207 /* Keychain */;
+			targetProxy = 52E7D79B1F041B3800A0C207 /* PBXContainerItemProxy */;
+		};
+		52E7D7B11F041B9300A0C207 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52E7D7AA1F041B9300A0C207 /* Auth */;
+			targetProxy = 52E7D7B01F041B9300A0C207 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1449,6 +1691,100 @@
 			};
 			name = Release;
 		};
+		52E7D7A01F041B3800A0C207 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HH2W3RXN6V;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Keychain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jz.Keychain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		52E7D7A11F041B3800A0C207 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HH2W3RXN6V;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Keychain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jz.Keychain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		52E7D7B51F041B9300A0C207 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HH2W3RXN6V;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Auth/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jz.Auth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		52E7D7B61F041B9300A0C207 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HH2W3RXN6V;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Auth/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jz.Auth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1529,6 +1865,24 @@
 			buildConfigurations = (
 				529FDDC51F0041A0000E550A /* Debug */,
 				529FDDC61F0041A0000E550A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52E7D79F1F041B3800A0C207 /* Build configuration list for PBXNativeTarget "Keychain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E7D7A01F041B3800A0C207 /* Debug */,
+				52E7D7A11F041B3800A0C207 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52E7D7B41F041B9300A0C207 /* Build configuration list for PBXNativeTarget "Auth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E7D7B51F041B9300A0C207 /* Debug */,
+				52E7D7B61F041B9300A0C207 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

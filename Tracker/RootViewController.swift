@@ -13,6 +13,7 @@ final class RootViewController: UITabBarController, UITabBarControllerDelegate {
     
     private var trackingViewController: UINavigationController!
     private var journeysViewController: UINavigationController!
+    private var profileViewController: UINavigationController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +38,15 @@ final class RootViewController: UITabBarController, UITabBarControllerDelegate {
         journeysViewController = UINavigationController(rootViewController: journeysController)
         journeysViewController.tabBarItem = UITabBarItem(title: journeyType.description, image: journeyType.tabBarImage, selectedImage: journeyType.tabBarImage)
         
+        
+        let profileType = ControllerType.profile
+        let profileController = ViewControllerFactory.viewControllerFromStoryboard(profileType) as! ProfileViewController
+        profileController.title = profileType.description
+        profileViewController = UINavigationController(rootViewController: profileController)
+        profileViewController.tabBarItem = UITabBarItem(title: profileType.description, image: profileType.tabBarImage, selectedImage: profileType.tabBarImage)
+        
         /* add initialized controllers to the tab bar controller */
-        viewControllers = [trackingViewController, journeysViewController]
+        viewControllers = [trackingViewController, journeysViewController, profileViewController]
         selectedIndex = 0 // and indicate default open controller to the first one
     }
 }

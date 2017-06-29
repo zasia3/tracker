@@ -7,20 +7,21 @@
 //
 
 import UIKit
+import Auth
 
-final class JourneysListViewController: UITableViewController {
+final class JourneysListViewController: UITableViewController, AuthProtectedViewController {
     
     private var dataSource: JourneysDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupDataSource()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         reloadData()
+        showLogin(with: self)
     }
     
     /* initialize data source and assign it to the tableview */
@@ -44,4 +45,8 @@ final class JourneysListViewController: UITableViewController {
         journeyViewController.journey = item
         navigationController?.pushViewController(journeyViewController, animated: true)
     }
+}
+
+extension JourneysListViewController: LoginViewControllerDelegate {
+    func didLogin() {}
 }

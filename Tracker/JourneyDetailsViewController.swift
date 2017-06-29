@@ -10,7 +10,7 @@ import UIKit
 import Model
 import iOSKit
 
-final class JourneyDetailsViewController: UIViewController {
+final class JourneyDetailsViewController: UIViewController, AuthProtectedViewController {
     
     var journey: Journey!
     
@@ -26,6 +26,11 @@ final class JourneyDetailsViewController: UIViewController {
         super.viewDidLoad()
         setupLabels()
         plotTrack()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showLogin(with: self)
     }
     
     /* set the formatted date strings to the labels */
@@ -45,4 +50,7 @@ final class JourneyDetailsViewController: UIViewController {
     private func plotTrack() {
         mapView.showTrack(with: journey.track)
     }
+}
+extension JourneyDetailsViewController: LoginViewControllerDelegate {
+    func didLogin() {}
 }
