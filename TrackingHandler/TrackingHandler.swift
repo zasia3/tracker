@@ -31,13 +31,16 @@ public final class TrackingHandler: NSObject {
     /* status of the journey */
     public var journeyStatus: JourneyStatus = .journeyOff
     
-    /* initialize location manager, ask user for permissions to track the position
-     * and optimize location updates when the app is suspended
+    /* initialize location manager, ask user for permissions to track the position,
+     * optimize location updates when the app is suspended
+     * optimize the accuracy - so the battery is not drained so quickly
      */
     public func initialize() {
         locationManager.requestAlwaysAuthorization()
         
         locationManager.pausesLocationUpdatesAutomatically = false
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         
         locationManager.delegate = self
     }
