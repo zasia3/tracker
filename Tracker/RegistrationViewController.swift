@@ -64,7 +64,7 @@ final class RegistrationViewController: UIViewController, AlertProtocol {
         if Auth.shared.register(email: email, password: password) {
             showAlert("You have been successfully registered and logged in", with: { [weak self] _ in
                 self?.dismiss(animated: true, completion: nil)
-                self?.delegate?.didRegister()
+                self?.didRegister()
             })
         }
     }
@@ -75,5 +75,13 @@ final class RegistrationViewController: UIViewController, AlertProtocol {
     
     @objc private func didTap() {
         view.endEditing(true)
+    }
+    
+    private func didRegister() {
+        
+        /* after registering I need to notify the delegate - I dispatch it on the main thread */
+        DispatchQueue.main.async { [weak self] in
+            self?.delegate?.didRegister()
+        }
     }
 }

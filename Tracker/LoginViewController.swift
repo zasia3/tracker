@@ -112,7 +112,6 @@ final class LoginViewController: UIViewController, AlertProtocol {
         
         context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [weak self] success, error in
             if success {
-                print("Auth was OK")
                 Auth.shared.setLoggedIn()
                 self?.dismissLoginView()
             } else {
@@ -123,7 +122,11 @@ final class LoginViewController: UIViewController, AlertProtocol {
     
     fileprivate func dismissLoginView() {
         dismiss(animated: true, completion: nil)
-        delegate?.didLogin()
+        
+        /* after log in I need to notify the delegate - I dispatch it on the main thread */
+        DispatchQueue.main.async { [weak self] in
+            self?.delegate?.didLogin()
+        }
     }
     
 }
