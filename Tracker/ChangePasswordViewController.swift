@@ -10,6 +10,7 @@ import Foundation
 import Auth
 import iOSKit
 
+/* simple password change for registered users */
 final class ChangePasswordViewController: UIViewController, AlertProtocol {
     
     @IBOutlet weak var newPasswordField: UITextField!
@@ -21,6 +22,7 @@ final class ChangePasswordViewController: UIViewController, AlertProtocol {
         view.addGestureRecognizer(tap)
     }
     
+    /* validation - as in register form */
     @IBAction func didTapChangePassword(_ sender: Any) {
         guard let password = confirmPasswordField.text,
             !password.isEmpty,
@@ -41,6 +43,8 @@ final class ChangePasswordViewController: UIViewController, AlertProtocol {
         }
         
         Auth.shared.changePassword(password)
+        
+        /* after changing password - return to the previous view controller*/
         showAlert("Password changed", with: { [weak self] _ in
             self?.navigationController?.popViewController(animated: true)
         })

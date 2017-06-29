@@ -565,7 +565,6 @@
 				529FDDB61F003C24000E550A /* Track */,
 				529FDDAE1F001E65000E550A /* Journeys */,
 				52E7D7C31F04447E00A0C207 /* Security */,
-				52E7D7D31F058F2200A0C207 /* AuthProtectedViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -583,6 +582,7 @@
 			children = (
 				529FDDA71F001693000E550A /* RootViewController.swift */,
 				529FDDAB1F0018FE000E550A /* ViewControllerFactory.swift */,
+				52E7D7D31F058F2200A0C207 /* AuthProtectedViewController.swift */,
 			);
 			name = ConmmonControllers;
 			sourceTree = "<group>";

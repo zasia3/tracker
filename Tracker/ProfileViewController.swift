@@ -10,6 +10,8 @@ import UIKit
 import Auth
 import iOSKit
 
+
+/* simple profile view with login related features */
 final class ProfileViewController: UITableViewController, AlertProtocol, AuthProtectedViewController {
     
     private var dataSource: ProfileDataSource!

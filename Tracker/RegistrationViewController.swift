@@ -14,6 +14,7 @@ protocol RegistrationViewControllerDelegate: class {
     func didRegister()
 }
 
+/* simple registration form */
 final class RegistrationViewController: UIViewController, AlertProtocol {
     
     @IBOutlet weak var emailField: UITextField!
@@ -28,8 +29,10 @@ final class RegistrationViewController: UIViewController, AlertProtocol {
         view.addGestureRecognizer(tap)
     }
     
+
     @IBAction func didTapRegister(_ sender: Any) {
         
+        /* validate the user input before registering */
         guard let email = emailField.text,
             !email.isEmpty,
             let password = passwordField.text,
@@ -40,16 +43,19 @@ final class RegistrationViewController: UIViewController, AlertProtocol {
                 return
         }
         
+        /* email must be in the correct format */
         guard email.isValidEmail() else {
             showAlert("Invalid password format!")
             return
         }
         
+        /* password must have at least 8 characters */
         guard password.characters.count >= 8 else {
             showAlert("Password must have at least 8 characters")
             return
         }
         
+        /* password and confirmation must match */
         guard password == passwordConfirmation else {
             showAlert("Password and confirmation do not match")
             return

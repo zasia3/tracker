@@ -15,6 +15,10 @@ protocol LoginViewControllerDelegate: class {
     func didLogin()
 }
 
+/* simple login form, with very basic auth functionality
+ * user can login using email and password 
+ * or he can use touch id - if he forgets the credentials, or just want to be quick
+ */
 final class LoginViewController: UIViewController, AlertProtocol {
     
     @IBOutlet weak var emailField: UITextField!
@@ -47,6 +51,10 @@ final class LoginViewController: UIViewController, AlertProtocol {
         }
     }
     
+    /* when user taps login - it is necessary to validate the fields
+     * check if both are filled in and present message with the validation errors
+     */
+    
     @IBAction func didTapLogin(_ sender: Any) {
         guard let email = emailField.text,
             !email.isEmpty,
@@ -63,27 +71,41 @@ final class LoginViewController: UIViewController, AlertProtocol {
         
         
         if Auth.shared.login(email: email, password: password) {
+            
+            /* when user is logged in - I show the confirmation 
+             * and when user taps ok on the alert the view controller is dismissed
+             */
             showAlert("You have been successfully logged in", with: { [weak self] _ in
                 self?.dismissLoginView()
             })
         } else {
+            /* if something went wrong - show error alert */
             showAlert("Could not log in. Please check your credentials")
         }
         
     }
     
+    /* open registration field */
     @IBAction func didTapRegister(_ sender: Any) {
         let registrationViewController = ViewControllerFactory.viewControllerFromStoryboard(.register) as! RegistrationViewController
         registrationViewController.delegate = self
+        
+        /* I am changing the presentation style, because the modal should not cover the tab bar */
         registrationViewController.modalPresentationStyle = .overCurrentContext
         present(registrationViewController, animated: true, completion: nil)
     }
     
+    /* hide the keyboard whe user taps the screen */
     @objc private func didTap() {
         view.endEditing(true)
     }
 
+    /* this is a standard login using touch id */
     private func loginWithTouchId(){
+        
+        /* allow for the touch id login only if there is already a user registered */
+        guard Auth.shared.userName() != nil else { return }
+        
         guard context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
             return
         }
