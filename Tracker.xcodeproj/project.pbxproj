@@ -79,11 +79,13 @@
 		52E7D7B31F041B9300A0C207 /* Auth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52E7D7AB1F041B9300A0C207 /* Auth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52E7D7B81F041BA500A0C207 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7B71F041BA500A0C207 /* Auth.swift */; };
 		52E7D7B91F04230300A0C207 /* Keychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E7D7961F041B3800A0C207 /* Keychain.framework */; };
-		52E7D7BB1F04245A00A0C207 /* AuthProtectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7BA1F04245A00A0C207 /* AuthProtectedViewController.swift */; };
 		52E7D7BD1F04259300A0C207 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7BC1F04259300A0C207 /* ProfileViewController.swift */; };
 		52E7D7C01F04375F00A0C207 /* ProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7BF1F04375F00A0C207 /* ProfileDataSource.swift */; };
 		52E7D7C51F0445BC00A0C207 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7C41F0445BC00A0C207 /* RegistrationViewController.swift */; };
 		52E7D7C71F0447A600A0C207 /* String+ email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7C61F0447A600A0C207 /* String+ email.swift */; };
+		52E7D7CB1F05837800A0C207 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7CA1F05837800A0C207 /* ChangePasswordViewController.swift */; };
+		52E7D7CF1F058D4800A0C207 /* AlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7CE1F058D4800A0C207 /* AlertProtocol.swift */; };
+		52E7D7D41F058F2200A0C207 /* AuthProtectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D7D31F058F2200A0C207 /* AuthProtectedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,11 +245,13 @@
 		52E7D7AD1F041B9300A0C207 /* Auth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Auth.h; sourceTree = "<group>"; };
 		52E7D7AE1F041B9300A0C207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52E7D7B71F041BA500A0C207 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
-		52E7D7BA1F04245A00A0C207 /* AuthProtectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProtectedViewController.swift; sourceTree = "<group>"; };
 		52E7D7BC1F04259300A0C207 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52E7D7BF1F04375F00A0C207 /* ProfileDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDataSource.swift; sourceTree = "<group>"; };
 		52E7D7C41F0445BC00A0C207 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		52E7D7C61F0447A600A0C207 /* String+ email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ email.swift"; sourceTree = "<group>"; };
+		52E7D7CA1F05837800A0C207 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		52E7D7CE1F058D4800A0C207 /* AlertProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertProtocol.swift; sourceTree = "<group>"; };
+		52E7D7D31F058F2200A0C207 /* AuthProtectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProtectedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,6 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				5226A9601F01A1160080B75D /* Other */,
+				52E7D7D01F058D5500A0C207 /* Protocols */,
 				529D50781EFFC5BA001E3062 /* Extensions */,
 				5226A9611F01A1210080B75D /* controls */,
 				529FDDB41F00277B000E550A /* JourneyDateFormatter.swift */,
@@ -560,6 +565,7 @@
 				529FDDB61F003C24000E550A /* Track */,
 				529FDDAE1F001E65000E550A /* Journeys */,
 				52E7D7C31F04447E00A0C207 /* Security */,
+				52E7D7D31F058F2200A0C207 /* AuthProtectedViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -587,7 +593,6 @@
 				529FDDA51F001471000E550A /* JourneysListViewController.swift */,
 				529FDDAF1F001E78000E550A /* JourneysDataSource.swift */,
 				529FDDB21F002420000E550A /* JourneyDetailsViewController.swift */,
-				52E7D7BA1F04245A00A0C207 /* AuthProtectedViewController.swift */,
 			);
 			name = Journeys;
 			sourceTree = "<group>";
@@ -649,8 +654,17 @@
 			children = (
 				52E7D78F1F04137700A0C207 /* LoginViewController.swift */,
 				52E7D7C41F0445BC00A0C207 /* RegistrationViewController.swift */,
+				52E7D7CA1F05837800A0C207 /* ChangePasswordViewController.swift */,
 			);
 			name = Security;
+			sourceTree = "<group>";
+		};
+		52E7D7D01F058D5500A0C207 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				52E7D7CE1F058D4800A0C207 /* AlertProtocol.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1110,11 +1124,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E7D7901F04137700A0C207 /* LoginViewController.swift in Sources */,
-				52E7D7BB1F04245A00A0C207 /* AuthProtectedViewController.swift in Sources */,
 				529FDDB31F002420000E550A /* JourneyDetailsViewController.swift in Sources */,
 				529FDDA81F001693000E550A /* RootViewController.swift in Sources */,
 				52E7D7C51F0445BC00A0C207 /* RegistrationViewController.swift in Sources */,
 				529FDDAC1F0018FE000E550A /* ViewControllerFactory.swift in Sources */,
+				52E7D7D41F058F2200A0C207 /* AuthProtectedViewController.swift in Sources */,
 				529D50231EFDB830001E3062 /* TrackingMapViewController.swift in Sources */,
 				52E7D7BD1F04259300A0C207 /* ProfileViewController.swift in Sources */,
 				529D50751EFFC1AB001E3062 /* MapView.swift in Sources */,
@@ -1122,6 +1136,7 @@
 				529FDDA61F001471000E550A /* JourneysListViewController.swift in Sources */,
 				52E7D7C01F04375F00A0C207 /* ProfileDataSource.swift in Sources */,
 				529D50211EFDB830001E3062 /* AppDelegate.swift in Sources */,
+				52E7D7CB1F05837800A0C207 /* ChangePasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1149,6 +1164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E7D7CF1F058D4800A0C207 /* AlertProtocol.swift in Sources */,
 				52E7D78A1F02EE2C00A0C207 /* Double+rounding.swift in Sources */,
 				52E7D7881F02E58100A0C207 /* TimeIntervalExt.swift in Sources */,
 				52E7D7861F02E3CC00A0C207 /* Date+offset.swift in Sources */,

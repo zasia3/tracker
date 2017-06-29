@@ -17,6 +17,7 @@ enum ControllerType: CustomStringConvertible {
     case login
     case register
     case profile
+    case changePassword
     
     var storyboardIdentifier: String {
         switch self {
@@ -32,6 +33,8 @@ enum ControllerType: CustomStringConvertible {
             return "RegistrationViewController"
         case .profile:
             return "ProfileViewController"
+        case .changePassword:
+            return "ChangePasswordViewController"
         }
     }
     
@@ -53,6 +56,8 @@ enum ControllerType: CustomStringConvertible {
             return "Register"
         case .profile:
             return "Profile"
+        case .changePassword:
+            return "Change password"
         }
     }
     

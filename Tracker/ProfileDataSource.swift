@@ -11,6 +11,7 @@ import Auth
 
 enum ProfileCellType {
     case login
+    case changePassword
     
     var title: String {
         switch self {
@@ -19,13 +20,27 @@ enum ProfileCellType {
                 return "Logout"
             }
             return "Login"
+        case .changePassword:
+            return "Change password"
+        }
+    }
+    
+    var textColor: UIColor {
+        switch self {
+        case .changePassword:
+            if !Auth.shared.isLoggedIn() {
+                return UIColor.lightGray
+            }
+            fallthrough
+        default:
+            return UIColor.black
         }
     }
 }
 
 final class ProfileDataSource: NSObject, UITableViewDataSource {
     
-    private let items: [ProfileCellType] = [.login]
+    private let items: [ProfileCellType] = [.login, .changePassword]
     
     
     /* get particular item */
@@ -43,7 +58,7 @@ final class ProfileDataSource: NSObject, UITableViewDataSource {
         
         //just show the start date of the journey
         cell?.textLabel?.text = item.title
-        
+        cell?.textLabel?.textColor = item.textColor
         return cell!
     }
 }

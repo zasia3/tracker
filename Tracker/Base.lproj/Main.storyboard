@@ -336,7 +336,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQQ-Wu-QKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4593" y="56"/>
+            <point key="canvasLocation" x="4788" y="54"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="C6n-Z1-jV0">
@@ -404,14 +404,72 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailConfirmationField" destination="pJv-9L-bwZ" id="yqs-rR-H3N"/>
                         <outlet property="emailField" destination="zM6-Lu-nNW" id="fli-QO-8nE"/>
+                        <outlet property="passwordConfirmationField" destination="pJv-9L-bwZ" id="KXk-Hk-YnJ"/>
                         <outlet property="passwordField" destination="qOi-1W-wBy" id="Ia3-Eq-Vw9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TF5-cf-2Ye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3234" y="55"/>
+        </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="vZk-sf-Fge">
+            <objects>
+                <viewController storyboardIdentifier="ChangePasswordViewController" id="pOi-go-cFq" customClass="ChangePasswordViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KI7-nf-Jcf"/>
+                        <viewControllerLayoutGuide type="bottom" id="TSi-Oa-gtT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k84-id-k5I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xi6-q9-vYM">
+                                <rect key="frame" x="16" y="40" width="343" height="125"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="y0O-kR-enf">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iLc-B9-klc">
+                                        <rect key="frame" x="0.0" y="40" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOK-bl-Nrs">
+                                        <rect key="frame" x="0.0" y="80" width="343" height="45"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="ZYf-0t-Nli"/>
+                                        </constraints>
+                                        <state key="normal" title="Change password"/>
+                                        <connections>
+                                            <action selector="didTapChangePassword:" destination="pOi-go-cFq" eventType="touchUpInside" id="EPB-Ic-AdV"/>
+                                            <action selector="didTapLogin:" destination="sKq-sp-Uph" eventType="touchUpInside" id="7lD-nt-Zgu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xi6-q9-vYM" firstAttribute="top" secondItem="KI7-nf-Jcf" secondAttribute="bottom" constant="20" id="4UK-WE-feN"/>
+                            <constraint firstItem="Xi6-q9-vYM" firstAttribute="leading" secondItem="k84-id-k5I" secondAttribute="leadingMargin" id="72r-Rt-9VR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xi6-q9-vYM" secondAttribute="trailing" id="Fd0-4t-hx7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmPasswordField" destination="iLc-B9-klc" id="xd0-VW-5dT"/>
+                        <outlet property="newPasswordField" destination="y0O-kR-enf" id="V2l-8G-hDR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PxW-Fc-Atv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3993" y="58"/>
         </scene>
     </scenes>
 </document>

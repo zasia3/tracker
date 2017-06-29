@@ -9,8 +9,13 @@
 import UIKit
 import Auth
 import LocalAuthentication
+import iOSKit
 
-final class LoginViewController: UIViewController {
+protocol LoginViewControllerDelegate: class {
+    func didLogin()
+}
+
+final class LoginViewController: UIViewController, AlertProtocol {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -20,6 +25,14 @@ final class LoginViewController: UIViewController {
     private var error: NSError?
     
     private var success:Bool = false
+    
+    weak var delegate: LoginViewControllerDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        view.addGestureRecognizer(tap)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -48,19 +61,26 @@ final class LoginViewController: UIViewController {
             return
         }
         
+        
+        if Auth.shared.login(email: email, password: password) {
+            showAlert("You have been successfully logged in", with: { [weak self] _ in
+                self?.dismissLoginView()
+            })
+        } else {
+            showAlert("Could not log in. Please check your credentials")
+        }
+        
     }
     
     @IBAction func didTapRegister(_ sender: Any) {
         let registrationViewController = ViewControllerFactory.viewControllerFromStoryboard(.register) as! RegistrationViewController
+        registrationViewController.delegate = self
         registrationViewController.modalPresentationStyle = .overCurrentContext
         present(registrationViewController, animated: true, completion: nil)
     }
     
-    private func showAlert(_ message: String) {
-        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        
-        present(alert, animated: true, completion: nil)
+    @objc private func didTap() {
+        view.endEditing(true)
     }
 
     private func loginWithTouchId(){
@@ -72,11 +92,22 @@ final class LoginViewController: UIViewController {
             if success {
                 print("Auth was OK")
                 Auth.shared.setLoggedIn()
-                self?.dismiss(animated: true, completion: nil)
+                self?.dismissLoginView()
             } else {
-                print("Error received: %d", error!)
+                print("Error received: \(String(describing: error))")
             }
         }
     }
     
+    fileprivate func dismissLoginView() {
+        dismiss(animated: true, completion: nil)
+        delegate?.didLogin()
+    }
+    
+}
+
+extension LoginViewController: RegistrationViewControllerDelegate {
+    func didRegister() {
+        dismissLoginView()
+    }
 }

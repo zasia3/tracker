@@ -30,7 +30,7 @@ final class JourneyDetailsViewController: UIViewController, AuthProtectedViewCon
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        showLogin()
+        showLogin(with: self)
     }
     
     /* set the formatted date strings to the labels */
@@ -50,4 +50,7 @@ final class JourneyDetailsViewController: UIViewController, AuthProtectedViewCon
     private func plotTrack() {
         mapView.showTrack(with: journey.track)
     }
+}
+extension JourneyDetailsViewController: LoginViewControllerDelegate {
+    func didLogin() {}
 }

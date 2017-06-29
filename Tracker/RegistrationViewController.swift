@@ -7,13 +7,26 @@
 //
 
 import UIKit
+import Auth
+import iOSKit
 
-final class RegistrationViewController: UIViewController {
+protocol RegistrationViewControllerDelegate: class {
+    func didRegister()
+}
+
+final class RegistrationViewController: UIViewController, AlertProtocol {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var emailConfirmationField: UITextField!
+    @IBOutlet weak var passwordConfirmationField: UITextField!
     
+    weak var delegate: RegistrationViewControllerDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        view.addGestureRecognizer(tap)
+    }
     
     @IBAction func didTapRegister(_ sender: Any) {
         
@@ -21,8 +34,8 @@ final class RegistrationViewController: UIViewController {
             !email.isEmpty,
             let password = passwordField.text,
             !password.isEmpty,
-            let emailConfirmation = emailConfirmationField.text,
-            !emailConfirmation.isEmpty else {
+            let passwordConfirmation = passwordConfirmationField.text,
+            !passwordConfirmation.isEmpty else {
                 showAlert("All fields must be filled in")
                 return
         }
@@ -32,27 +45,29 @@ final class RegistrationViewController: UIViewController {
             return
         }
         
-        guard password.characters.count > 8 else {
+        guard password.characters.count >= 8 else {
             showAlert("Password must have at least 8 characters")
             return
         }
         
-        guard password == emailConfirmation else {
+        guard password == passwordConfirmation else {
             showAlert("Password and confirmation do not match")
             return
         }
         
-        
+        if Auth.shared.register(email: email, password: password) {
+            showAlert("You have been successfully registered and logged in", with: { [weak self] _ in
+                self?.dismiss(animated: true, completion: nil)
+                self?.delegate?.didRegister()
+            })
+        }
     }
     
     @IBAction func didTapCancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-    private func showAlert(_ message: String) {
-        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        
-        present(alert, animated: true, completion: nil)
+    @objc private func didTap() {
+        view.endEditing(true)
     }
 }

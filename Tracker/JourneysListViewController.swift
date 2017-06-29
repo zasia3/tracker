@@ -21,7 +21,7 @@ final class JourneysListViewController: UITableViewController, AuthProtectedView
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         reloadData()
-        showLogin()
+        showLogin(with: self)
     }
     
     /* initialize data source and assign it to the tableview */
@@ -45,4 +45,8 @@ final class JourneysListViewController: UITableViewController, AuthProtectedView
         journeyViewController.journey = item
         navigationController?.pushViewController(journeyViewController, animated: true)
     }
+}
+
+extension JourneysListViewController: LoginViewControllerDelegate {
+    func didLogin() {}
 }
