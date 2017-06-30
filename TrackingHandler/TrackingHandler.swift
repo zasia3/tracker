@@ -113,6 +113,7 @@ public final class TrackingHandler: NSObject {
         
         /* turn off background tracking */
         locationManager.allowsBackgroundLocationUpdates = false
+        resumeUserUpdate()
     }
     
     /* turn on or off tracking user position during the journey */
