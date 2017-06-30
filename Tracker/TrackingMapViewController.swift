@@ -31,8 +31,15 @@ final class TrackingMapViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        /* if we are not tracking and user returns from another screen - start getting his position to show on the map */
+        /* if we are not tracking and user returns from another screen - start getting his position to show it on the map */
         TrackingHandler.shared.resumeUserUpdate()
+        
+        /* clear the map if not tracking, and user returns from the other views,
+         * without it, the map will still display the previous track
+         */
+        if TrackingHandler.shared.journeyStatus == .journeyOff {
+            mapView.removeTrack()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

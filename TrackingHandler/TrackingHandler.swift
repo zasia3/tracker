@@ -86,7 +86,9 @@ public final class TrackingHandler: NSObject {
         }
     }
     
-    /* if we are not tracking yet, resume getting user location */
+    /* if we are not tracking yet, resume getting user location
+     * used in case I just want to update user position without saving it
+     */
     public func resumeUserUpdate() {
         if journeyStatus == .journeyOff {
             locationManager.startUpdatingLocation()
@@ -95,7 +97,7 @@ public final class TrackingHandler: NSObject {
     
     /* let the journey begin */
     private func startJourney() {
-        
+
         journeyHandler.startJourney()
         startTracking()
         /* turn on background tracking */
