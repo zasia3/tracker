@@ -132,6 +132,9 @@ public final class TrackingHandler: NSObject {
     private func startTracking() {
         journeyStatus = .trackingOn
         locationManager.startUpdatingLocation()
+        
+        guard let geoRegion = geoRegion else { return }
+        locationManager.stopMonitoring(for: geoRegion)
     }
     
     /* start updating user location and set tracking status to off */
