@@ -120,10 +120,7 @@ final class TrackingMapViewController: UIViewController {
         TrackingHandler.shared.toggleJourney()
         
         /* and update UI */
-        setupJourneyToggle()
-        setupTrackingSwitch()
-        setupTrackingLabel()
-        clearMap()
+        updateUI()
     }
     
     /* remove track from the map - we need a clear map for a new journey */
@@ -131,6 +128,13 @@ final class TrackingMapViewController: UIViewController {
         if TrackingHandler.shared.journeyStatus == .trackingOff {
             mapView.removeTrack()
         }
+    }
+    
+    fileprivate func updateUI() {
+        setupJourneyToggle()
+        setupTrackingSwitch()
+        setupTrackingLabel()
+        clearMap()
     }
 }
 
@@ -148,6 +152,10 @@ extension TrackingMapViewController: TrackingHandlerDelegate {
         
         let positions = TrackingHandler.shared.currentTrack()
         mapView.showCurrentTrack(with: positions)
+    }
+    
+    func didExitRegion() {
+        updateUI()
     }
 }
 
