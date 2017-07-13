@@ -31,7 +31,15 @@ extension TrackingHandler: CLLocationManagerDelegate {
     }
     
     public func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        startJourney()
+        
+        switch journeyStatus {
+        case .journeyOff:
+            startJourney()
+        case .trackingOff:
+            startTracking()
+        default:
+            break
+        }
         delegate?.didExitRegion()
     }
 }

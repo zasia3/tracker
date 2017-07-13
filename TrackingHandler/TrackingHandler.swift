@@ -129,12 +129,13 @@ public final class TrackingHandler: NSObject {
     }
     
     /* start updating user location and set tracking status to on */
-    private func startTracking() {
+    func startTracking() {
         journeyStatus = .trackingOn
         locationManager.startUpdatingLocation()
         
         guard let geoRegion = geoRegion else { return }
         locationManager.stopMonitoring(for: geoRegion)
+        print("stopped monitoring for region: \(geoRegion)")
     }
     
     /* start updating user location and set tracking status to off */
@@ -144,5 +145,6 @@ public final class TrackingHandler: NSObject {
         
         guard let geoRegion = geoRegion else { return }
         locationManager.startMonitoring(for: geoRegion)
+        print("started monitoring for region: \(geoRegion)")
     }
 }
