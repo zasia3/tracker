@@ -13,6 +13,7 @@ import Model
 public protocol TrackingHandlerDelegate: class {
     func didReceiveUserPosition(_ position: Position)
     func trackChanged()
+    func didExitRegion()
 }
 
 public final class TrackingHandler: NSObject {
@@ -30,6 +31,8 @@ public final class TrackingHandler: NSObject {
     
     /* status of the journey */
     public var journeyStatus: JourneyStatus = .journeyOff
+    
+    var geoRegion: CLCircularRegion?
     
     /* initialize location manager, ask user for permissions to track the position,
      * optimize location updates when the app is suspended
@@ -96,7 +99,7 @@ public final class TrackingHandler: NSObject {
     }
     
     /* let the journey begin */
-    private func startJourney() {
+    func startJourney() {
 
         journeyHandler.startJourney()
         startTracking()
@@ -126,14 +129,22 @@ public final class TrackingHandler: NSObject {
     }
     
     /* start updating user location and set tracking status to on */
-    private func startTracking() {
+    func startTracking() {
         journeyStatus = .trackingOn
         locationManager.startUpdatingLocation()
+        
+        guard let geoRegion = geoRegion else { return }
+        locationManager.stopMonitoring(for: geoRegion)
+        print("stopped monitoring for region: \(geoRegion)")
     }
     
     /* start updating user location and set tracking status to off */
     private func stopTracking() {
         journeyStatus = .trackingOff
         locationManager.stopUpdatingLocation()
+        
+        guard let geoRegion = geoRegion else { return }
+        locationManager.startMonitoring(for: geoRegion)
+        print("started monitoring for region: \(geoRegion)")
     }
 }
